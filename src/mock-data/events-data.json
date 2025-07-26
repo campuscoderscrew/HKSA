@@ -1,0 +1,68 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "eventName": "Big Little Week",
+      "time": "2023-10-01T10:00:00Z",
+      "location": "Stamp Ballroom",
+      "graphicDesign": "https://placehold.co/600x400/EEE/31343C",
+      "eventDescription": "Come create meet your fam"
+    },
+    {
+      "id": 2,
+      "eventName": "Family Night GBM",
+      "time": "2023-10-01T10:00:00Z",
+      "location": "Tawes 0241",
+      "graphicDesign": "https://placehold.co/600x400/EEE/31343C",
+      "eventDescription": "Play fun games and get to know your family"
+    },
+    {
+      "id": 3,
+      "eventName": "Spot Mini Fundraiser",
+      "time": "2023-10-01T10:00:00Z",
+      "location": "The Spot Mini",
+      "graphicDesign": "https://placehold.co/600x400/EEE/31343C",
+      "eventDescription": "Eat and drink to support our cause"
+    },
+    {
+      "id": 4,
+      "eventName": "Charity Night",
+      "time": "2025-09-06T18:00:00Z",
+      "location": "Tawes 0241",
+      "graphicDesign": "https://placehold.co/600x400/EEE/31343C",
+      "eventDescription": "Help us support AAPI Communities in Need"
+    },
+    {
+      "id": 5,
+      "eventName": "Hong Kong Festival",
+      "time": "2025-09-10T15:00:00Z",
+      "location": "Stamp Ballroom",
+      "graphicDesign": "https://placehold.co/600x400/EEE/31343C",
+      "eventDescription": "Learn more about Hong Kong culture and traditions!"
+    },
+    {
+      "id": 6,
+      "eventName": "Night in Hong Kong",
+      "time": "2025-09-15T19:00:00Z",
+      "location": "Stamp Ballroom",
+      "graphicDesign": "https://placehold.co/600x400/EEE/31343C",
+      "eventDescription": "Experience a night of Hong Kong culture with us"
+    },
+    {
+      "id": 7,
+      "eventName": "Valentine's GBM",
+      "time": "2025-09-20T17:00:00Z",
+      "location": "ESJ 1202",
+      "graphicDesign": "https://placehold.co/600x400/EEE/31343C",
+      "eventDescription": "Meet your one and only at our Valentine's GBM"
+    },
+    {
+      "id": 8,
+      "eventName": "Mogee Tea Fundraiser",
+      "time": "2025-09-25T14:00:00Z",
+      "location": "Mogee Tea",
+      "graphicDesign": "https://placehold.co/600x400/EEE/31343C",
+      "eventDescription": "Sip on delicious drinks while supporting a good cause!"
+    }
+  ]
+}
