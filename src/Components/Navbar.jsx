@@ -1,30 +1,52 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
 
-function Navbar() {
+
+const Navbar = () => {
+  const [isEventsOpen, setIsEventsOpen] = useState(false);
+
+  const toggleEventsDropdown = () => {
+    setIsEventsOpen(!isEventsOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsEventsOpen(false);
+  };
+
   return (
-    <nav className="bg-red-800 text-white p-4 w-full max-h-full flex justify-between items-center">
-      <div className="flex items-center space-x-4">
-        <Link className="flex items-center" to="/">
-          <img className="w-16 h-auto mr-4" src="hong kong.png" />
-          <h1>Hong Kong Student Association</h1>
-        </Link>
+    <nav className="flex justify-between items-center bg-white p-4 rounded-xl shadow-md">
+      
+      <div className="flex items-center space-x-5">
+        <a href="/" className="flex items-center">
+          <img src={"hong kong.png"} alt="Logo" className="w-10 h-auto" />
+          <h1 className="text-red-500 text-xl font-bold ml-5" style={{ fontFamily: 'Exo, sans-serif' }}>Hong Kong Student Association</h1>
+        </a>
       </div>
-      <div className="flex items-center mr-50">
-        <ul className="grid grid-cols-3 gap-25">
-          <li>
-            <Link to="/About">About</Link>
-          </li>
-          <li>
-            <Link to="/Officers">Officers</Link>
-          </li>
-          <li>
-            <Link to="/Events">Events</Link>
-          </li>
-        </ul>
-      </div>
+
+      
+      <ul className="flex gap-6">
+        <li className="relative">
+          <a href="#home" className="text-red-500 font-medium py-2 px-3 rounded-lg hover:bg-gray-400 transition duration-200" style={{ fontFamily: 'Exo, sans-serif' }}>Home</a>
+        </li>
+        <li className="relative">
+          <a href="#about" className="text-red-500 font-medium py-2 px-3 rounded-lg hover:bg-gray-400 transition duration-200" style={{ fontFamily: 'Exo, sans-serif' }}>About</a>
+        </li>
+        <li className="relative" onMouseEnter={toggleEventsDropdown}>
+          <a href="#events" className="text-red-500 font-medium py-2 px-3 rounded-lg hover:bg-gray-400 transition duration-200" style={{ fontFamily: 'Exo, sans-serif' }}>
+            Events ▾
+          </a>
+          {isEventsOpen && (
+            <ul className="absolute left-0 top-9 bg-white rounded-lg shadow-lg py-2 w-36">
+              <li><a href="#upcoming" className="block py-2 px-4 text-gray-800 hover:bg-gray-400" style={{ fontFamily: 'Exo, sans-serif' }}>Upcoming</a></li>
+              <li><a href="#past" className="block py-2 px-4 text-gray-800 hover:bg-gray-400" style={{ fontFamily: 'Exo, sans-serif' }}>Past</a></li>
+            </ul>
+          )}
+        </li>
+        <li className="relative">
+          <a href="#officers" className="text-red-500 font-medium py-2 px-3 rounded-lg hover:bg-gray-400 transition duration-400" style={{ fontFamily: 'Exo, sans-serif' }}>Officers</a>
+        </li>
+      </ul>
     </nav>
   );
-}
+};
 
 export default Navbar;
