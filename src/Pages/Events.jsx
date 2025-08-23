@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import eventsData from "../mock-data/events-data.json";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -7,25 +7,25 @@ function EventCard(props) {
   month = month.slice(0, 3);
   const tags = props.tags;
   return (
-    <div className="w-[1264px] h-[401px] border-[#cccccc] border-1 rounded-2xl px-[51px] py-[55px] flex flex-row mb-[69px]">
-      <div className="flex flex-row">
+    <div className="w-[1100px] h-[350px] border-[#cccccc] border-1 rounded-2xl px-[51px] py-[55px] flex flex-row mb-[50px]">
+      <div className="flex flex-row w-full">
         <div
-          className="uppercase mr-[62px] gap-0 leading-none text-center"
+          className="uppercase mr-[57px] gap-0 leading-none text-center"
           style={{ fontFamily: `" ZCOOL XiaoWei"` }}
         >
-          <p className="text-[28px]">{month}</p>
-          <p className="text-[64px]">{day}</p>
+          <p className="text-[25px]">{month}</p>
+          <p className="text-[55px]">{day}</p>
         </div>
         {/* Graphic Design */}
         <img
           src={props.graphicDesign}
           alt={props.title}
-          className="w-[388px] h-[277px] rounded-[6px] object-cover"
+          className="w-[325px] h-[230px] rounded-[6px] object-cover"
         />
-        <div className="flex flex-col ml-[54px]">
+        <div className="flex flex-col ml-[50px] w-full">
           {/* Title */}
           <h2
-            className="uppercase text-[32px] tracking-[11px] leading-8.5"
+            className="uppercase text-[27px] tracking-[11px] leading-8.5 whitespace-nowrap"
             style={{ fontFamily: `" ZCOOL XiaoWei"` }}
           >
             {" "}
@@ -33,7 +33,7 @@ function EventCard(props) {
           </h2>
           {/* Location and date */}
           <div
-            className="text-[20px] flex flex-row mt-[18px] items-center"
+            className="text-[18px] flex flex-row mt-[15px] items-center"
             style={{ fontFamily: `" ZCOOL XiaoWei"` }}
           >
             <img src="/Location.png" className="scale-70 mr-[10px]" />
@@ -43,17 +43,17 @@ function EventCard(props) {
           </div>
           {/* Description */}
           <p
-            className="text-[28px] max-w-[569px] h-[141px] leading-none flex items-center justify-center"
+            className="text-[20px] max-w-[569px] h-[115px] leading-none flex items-center justify-center"
             style={{ fontFamily: `" ZCOOL XiaoWei"` }}
           >
             {props.eventDescription}
           </p>
           {/* The tag buttons */}
-          <div className="flex flex-row flex-wrap gap-10">
+          <div className="flex flex-row flex-wrap gap-7">
             {tags.map((tag, index) => (
               <button
                 key={index}
-                className="py-[11px] px-[26px] border-1 border-[#D9D9D9] rounded-[6px] text-[20px]"
+                className="py-[8px] px-[15px] border-1 border-[#D9D9D9] rounded-[6px] text-[17px]"
                 style={{ fontFamily: `"Poppins"` }}
               >
                 {tag}
@@ -123,16 +123,16 @@ function Events() {
           </div>
         </div>
       </div>
-      <div className="w-full mt-[166px] mb-[170px] flex flex-col items-center justify-center space-y-[20px]">
+      <div className="w-full mt-[136px] mb-[100px] flex flex-col items-center justify-center space-y-[8px]">
         <h1
           style={{ fontFamily: `"Tiro Bangla"` }}
-          className="text-[64px] text-[#BD3921]"
+          className="text-[55px] text-[#BD3921]"
         >
           Events
         </h1>
         <p
           style={{ fontFamily: `" ZCOOL XiaoWei"` }}
-          className="text-[32px] w-[753px] text-center"
+          className="text-[27px] w-[753px] text-center"
         >
           As part of our club, we host various events throughout the semester.
           Check them out!
@@ -146,7 +146,7 @@ function Events() {
             upcoming
               ? "bg-[#AE282D] text-white"
               : "bg-transparent text-[#989898]"
-          } w-[234px] h-[78px] rounded-[13px] text-[32px] transition-colors duration-200`}
+          } w-[180px] h-[70px] rounded-[13px] text-[28px] transition-colors duration-200`}
           style={{ fontFamily: `"Lexend Deca"` }}
           onClick={() => setUpcoming(true)}
         >
@@ -157,7 +157,7 @@ function Events() {
             !upcoming
               ? "bg-[#AE282D] text-white"
               : "bg-transparent text-[#989898]"
-          }  w-[234px] h-[78px] rounded-[13px] text-[32px] transition-colors duration-200`}
+          }  w-[180px] h-[70px] rounded-[13px] text-[28px] transition-colors duration-200`}
           style={{ fontFamily: `"Lexend Deca"` }}
           onClick={() => setUpcoming(false)}
         >
