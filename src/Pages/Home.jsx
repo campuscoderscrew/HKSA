@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import MemoriesPhoto from "../Components/MemoriesPhoto.jsx"
+import memoryPlaceholder from '../Images/Home/memory-placeholder.png'; // Import the image
 
 function Home() {
   return (
@@ -17,10 +19,10 @@ function Home() {
       </div>
 
       {/* Immersion */}
-      <div class="w-9/10 mt-[182px] mb-[212px] mx-auto">
+      <div class="w-9/10 h-fit my-[182px] mx-auto">
         <img src="../src/Images/Home/immersion-decor-right.svg" alt="" class="block ml-auto mb-10 relative bottom-8" />
         <div class="flex w-9/10 m-auto gap-22.5">
-          <div class="flex flex-col w-1/3">
+          <div class="flex flex-col w-1/3 gap-2">
             <h2 class="text-[#DA0100] text-[56px] tracking-[5%]" style={{ fontFamily: 'Tiro Bangla, serif' }}>Immersion</h2>
             <p class="text-[28px] leading-[28px]"  style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }}>Bringing Hong Kong’s culture to campus - through food, festivals, and community</p>
           </div>
@@ -32,8 +34,32 @@ function Home() {
         </div>
         <img src="../src/Images/Home/immersion-decor-left.svg" alt="" class="block mt-10 relative top-8" />
       </div>
+
+      {/* Memories */}
+      <div class="w-fit h-fit relative">
+        <img src="../src/Images/Home/memories-background.png" alt="" />
+        <div class="w-full flex flex-col absolute top-1/10 gap-2 text-center">
+          <h2 class="text-[#DEDEDE] text-[56px] tracking-[5%]" style={{ fontFamily: 'Tiro Bangla, serif' }}>Memories</h2>
+          <p class="text-[28px] text-white leading-[28px]"  style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }}>These are some of ouy favorite moments</p>
+        </div>
+        <div style={{position: "absolute", top: "44.5%", left: "7.5%"}}>
+          <MemoriesPhoto imageURL={memoryPlaceholder} />
+        </div>
+        <div style={{position: "absolute", top: "38%", left: "40.5%"}}>
+          <MemoriesPhoto imageURL={memoryPlaceholder} />
+        </div>
+        <div style={{position: "absolute", top: "42.75%", left: "70%"}}>
+          <MemoriesPhoto imageURL={memoryPlaceholder} />
+        </div>
+        <div style={{position: "absolute", top: "70%", left: "27%"}}>
+          <MemoriesPhoto imageURL={memoryPlaceholder} />
+        </div>
+        <div style={{position: "absolute", top: "68.5%", left: "70%"}}>
+          <MemoriesPhoto imageURL={memoryPlaceholder} />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
