@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MemoriesPhoto from "../Components/MemoriesPhoto.jsx"
 import memoryPlaceholder from '../Images/Home/memory-placeholder.png'; // Import the image
 
@@ -71,8 +72,8 @@ function Home() {
             </div>
             <img class="relative top-4" src="../src/Images/Home/learn-more-decor.svg" alt="" />
           </div>
-          <button class="w-fit bg-[#AE282D] cursor-pointer hover:bg-[#8B0428] text-white font-bold font-[Lexend Deca] text-[28px] py-7.25 px-23 rounded">
-            About Us
+          <button class="w-fit bg-[#AE282D] hover:bg-[#8B0428] text-white font-bold font-[Lexend Deca] text-[28px] py-7.25 px-23 rounded">
+            <Link to="/about">About Us</Link>
           </button>
         </div>
         <div class="w-4/5 h-fit py-28 px-50 mx-auto mt-31 bg-[linear-gradient(125deg,_#A9262C,_#8B0428)] text-center rounded-[22px]">
