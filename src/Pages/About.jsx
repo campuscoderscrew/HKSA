@@ -43,19 +43,19 @@ function About() {
         
         <div className='font-["ZCOOL_XiaoWei"] text-[20px] flex flex-row flex-wrap gap-10 mr-[50px] ml-[75px] mt-[40px] mb-[120px] sm:justify-center sm:items-center'>
           <div className=''>
-            <img src="./placeholder.png" className='lg:h-[500px] h-[300px]'/>
+            <img src="./placeholder.png" className='lg:h-[350px] h-[300px]'/>
             <p>Caption</p>
           </div>
           <div className=''>
-            <img src="./placeholder.png" className='lg:h-[500px] h-[300px]'/>
+            <img src="./placeholder.png" className='lg:h-[350px] h-[300px]'/>
             <p>Caption</p>
           </div>
           <div className=''>
-            <img src="./placeholder.png" className='lg:h-[500px] h-[300px]'/>
+            <img src="./placeholder.png" className='lg:h-[350px] h-[300px]'/>
             <p>Caption</p>
           </div>
           <div className=''>
-            <img src="./placeholder.png" className='lg:h-[500px] h-[300px]'/>
+            <img src="./placeholder.png" className='lg:h-[350px] h-[300px]'/>
             <p>Caption</p>
           </div>
         </div>
