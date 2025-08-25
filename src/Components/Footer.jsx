@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='w-full h-screen relative'>
+        <div className='w-full h-auto relative'>
             <img src="../src/Images/footer-background.png" alt="" />
-            <div class="w-full flex flex-col items-center absolute top-1/2 -translate-y-1/2 gap-14 text-center">
+            <div class="w-full flex flex-col items-center absolute top-1/2 -translate-y-1/2 gap-8 text-center">
                 <div class="w-full flex flex-col items-center gap-2 text-center">
                     <h2 class="text-white text-[56px] tracking-[5%]" style={{ fontFamily: 'Tiro Bangla, serif' }}>Join Us</h2>
                     <p class="w-[420px] text-[28px] text-white leading-[28px]"  style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }}>Interested in joining the club? Reach out to us!</p>
