@@ -15,7 +15,7 @@ function Home() {
             <span class="block uppercase text-[89.48px] font-bold leading-26">Hong Kong</span>
             <span class="block uppercase text-[33.56px] font-bold leading-16 tracking-[0.24em]">Student Association</span>
           </h1>
-          <p class="text-[28px]">A student organization dedicated to promoting awareness and appreciation of Hong Kong’s unique culture</p>
+          <p class="text-[24px]">A student organization dedicated to promoting awareness and appreciation of Hong Kong’s unique culture</p>
         </div>
       </div>
 
@@ -25,7 +25,7 @@ function Home() {
         <div class="flex w-9/10 m-auto gap-22.5">
           <div class="flex flex-col w-1/3 gap-2">
             <h2 class="text-[#DA0100] text-[56px] tracking-[5%]" style={{ fontFamily: 'Tiro Bangla, serif' }}>Immersion</h2>
-            <p class="text-[28px] leading-[28px]"  style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }}>Bringing Hong Kong’s culture to campus - through food, festivals, and community</p>
+            <p class="text-[24px] leading-[24px]"  style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }}>Bringing Hong Kong’s culture to campus - through food, festivals, and community</p>
           </div>
           <div class="flex gap-14 w-2/3 justify-end">
             <img src="../src/Images/Home/immersion-1.png" alt="" class="w-[calc(33%-37.33px)] h-auto rounded-[12px] shadow-[-18px_18px_#E0E0E0]" />
@@ -41,7 +41,7 @@ function Home() {
         <img src="../src/Images/Home/memories-background.png" alt="" />
         <div class="w-full flex flex-col absolute top-1/12 gap-2 text-center">
           <h2 class="text-[#DEDEDE] text-[56px] tracking-[5%]" style={{ fontFamily: 'Tiro Bangla, serif' }}>Memories</h2>
-          <p class="text-[28px] text-white leading-[28px]"  style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }}>These are some of our favorite moments</p>
+          <p class="text-[24px] text-white leading-[24px]"  style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }}>These are some of our favorite moments</p>
         </div>
         <div style={{position: "absolute", top: "42.5%", left: "7.5%"}}>
           <MemoriesPhoto imageURL={memoryPlaceholder} />
@@ -68,22 +68,22 @@ function Home() {
             <img class="relative top-4" src="../src/Images/Home/learn-more-decor.svg" alt="" />
             <div class="flex flex-col gap-2 text-center">
               <h2 class="text-[#DA0100] text-[56px] tracking-[5%]" style={{ fontFamily: 'Tiro Bangla, serif' }}>Learn More</h2>
-              <p class="w-[560px] inline-block text-[28px] leading-[28px]"  style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }}>Want to learn more about what we do and who we are</p>
+              <p class="w-[560px] inline-block text-[24px] leading-[24px]"  style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }}>Want to learn more about what we do and who we are</p>
             </div>
             <img class="relative top-4" src="../src/Images/Home/learn-more-decor.svg" alt="" />
           </div>
-          <button class="w-fit bg-[#AE282D] hover:bg-[#8B0428] text-white font-bold font-[Lexend Deca] text-[28px] py-6 px-23 rounded">
+          <button class="w-fit bg-[#AE282D] hover:bg-[#8B0428] text-white font-bold font-[Lexend Deca] text-[24px] py-6 px-23 rounded">
             <Link to="/about">About Us</Link>
           </button>
         </div>
         <div class="w-4/5 h-fit pt-12 pb-16 px-50 mx-auto mt-16 bg-[linear-gradient(125deg,_#A9262C,_#8B0428)] text-center rounded-[22px]">
           <div className='flex flex-col gap-2'>
             <h3 class="font-[Lexend Deca] text-white text-[40px]">For all the updates</h3>
-            <p class="text-[28px] text-white leading-[28px]" style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }}>Drop your email and stay up to date on our club</p>
+            <p class="text-[22px] text-white leading-[24px]" style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }}>Drop your email and stay up to date on our club</p>
           </div>
 
           <div class="flex justify-center mt-10">
-            <input type="text" placeholder='example@gmail.com' class="w-full px-8.75 bg-white rounded-[15px_0_0_15px] text-[28px] leading-4" style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }} />
+            <input type="text" placeholder='example@gmail.com' class="w-full px-8.75 bg-white rounded-[15px_0_0_15px] text-[24px] leading-4" style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }} />
             <button class="bg-[linear-gradient(125deg,_#DC9536,_#FFC476,_#DC9536)] cursor-pointer rounded-[0_15px_15px_0] w-[125px] h-[77px]"></button>
           </div>
         </div>
