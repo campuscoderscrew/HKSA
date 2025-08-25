@@ -68,11 +68,11 @@ function About() {
             <h2 className='p-[20px] font-["Exo"] font-bold'>John Doe</h2>
             <p className='px-[20px] mb-[20px] font-["ZCOOL_XiaoWei"]' >Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.</p>
           </div>
-          <div className='flex flex-col bg-[white] w-[200px] font-bold rounded-2xl mb-[50px]'>
+          <div className='flex flex-col bg-[white] w-[200px] rounded-2xl mb-[50px]'>
             <h2 className='p-[20px] font-["Exo"]'>John Doe</h2>
             <p className='px-[20px] mb-[20px] font-["ZCOOL_XiaoWei"]'>Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.</p>
           </div>
-          <div className='flex flex-col bg-[white] w-[200px] font-bold rounded-2xl mb-[50px]'>
+          <div className='flex flex-col bg-[white] w-[200px] rounded-2xl mb-[50px]'>
             <h2 className='p-[20px] font-["Exo"]'>John Doe</h2>
             <p className='px-[20px] mb-[20px] font-["ZCOOL_XiaoWei"]'>Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.</p>
           </div>
