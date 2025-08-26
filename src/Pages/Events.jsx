@@ -95,7 +95,7 @@ function Events() {
         </div>
         <div className="w-[816px] h-[432px] absolute left-20 top-8 text-white backdrop-blur-[4px] bg-[rgba(0,0,0,0.2)] rounded-xl border border-[#E7DBDB] z-20">
           <h1
-            className="text-[56px] text-center tracking-[10px] text-shadow-white text-shadow-md mt-5 uppercase leading-15"
+            className="text-[50px] text-center tracking-[10px] text-shadow-white text-shadow-md mt-5 uppercase leading-15"
             style={{ fontFamily: `"Lexend Deca"` }}
           >
             {mostRecentEvent?.eventName}
@@ -143,29 +143,31 @@ function Events() {
       </div>
 
       {/* Buttons */}
-      <div className="ml-[132px]">
-        <button
-          className={`${
-            upcoming
-              ? "bg-[#AE282D] text-white"
-              : "bg-transparent text-[#989898]"
-          } w-[150px] h-[60px] rounded-[13px] text-[23px] transition-colors duration-200`}
-          style={{ fontFamily: `"Lexend Deca"` }}
-          onClick={() => setUpcoming(true)}
-        >
-          Upcoming
-        </button>
-        <button
-          className={`${
-            !upcoming
-              ? "bg-[#AE282D] text-white"
-              : "bg-transparent text-[#989898]"
-          }  w-[150px] h-[60px] rounded-[13px] text-[23px] transition-colors duration-200`}
-          style={{ fontFamily: `"Lexend Deca"` }}
-          onClick={() => setUpcoming(false)}
-        >
-          Previous
-        </button>
+      <div className="w-full flex justify-center">
+        <div className="w-[900px] flex justify-start mt-4">
+          <button
+            className={`${
+              upcoming
+                ? "bg-[#AE282D] text-white"
+                : "bg-transparent text-[#989898]"
+            } w-[150px] h-[60px] rounded-[13px] text-[23px] transition-colors duration-200`}
+            style={{ fontFamily: `"Lexend Deca"` }}
+            onClick={() => setUpcoming(true)}
+          >
+            Upcoming
+          </button>
+          <button
+            className={`${
+              !upcoming
+                ? "bg-[#AE282D] text-white"
+                : "bg-transparent text-[#989898]"
+            }  w-[150px] h-[60px] rounded-[13px] text-[23px] transition-colors duration-200`}
+            style={{ fontFamily: `"Lexend Deca"` }}
+            onClick={() => setUpcoming(false)}
+          >
+            Previous
+          </button>
+        </div>
       </div>
 
       {/* Events List */}
