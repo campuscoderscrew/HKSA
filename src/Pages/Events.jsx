@@ -7,10 +7,10 @@ function EventCard(props) {
   month = month.slice(0, 3);
   const tags = props.tags;
   return (
-    <div className="w-[1100px] h-[350px] border-[#cccccc] border-1 rounded-2xl px-[51px] py-[55px] flex flex-row mb-[50px]">
+    <div className="w-[900px] h-[320px] border-[#cccccc] border-1 rounded-2xl px-[30px] py-[55px] flex flex-row mb-[50px]">
       <div className="flex flex-row w-full">
         <div
-          className="uppercase mr-[57px] gap-0 leading-none text-center"
+          className="uppercase mr-[30px] gap-0 leading-none text-center"
           style={{ fontFamily: `" ZCOOL XiaoWei"` }}
         >
           <p className="text-[25px]">{month}</p>
@@ -20,12 +20,12 @@ function EventCard(props) {
         <img
           src={props.graphicDesign}
           alt={props.title}
-          className="w-[325px] h-[230px] rounded-[6px] object-cover"
+          className="w-[270px] h-[200px] rounded-[6px] object-cover"
         />
-        <div className="flex flex-col ml-[50px] w-full">
+        <div className="flex flex-col ml-[20px] w-[90%]">
           {/* Title */}
           <h2
-            className="uppercase text-[27px] tracking-[11px] leading-8.5 whitespace-nowrap"
+            className="uppercase text-[23px] tracking-[11px] leading-8.5 whitespace-nowrap"
             style={{ fontFamily: `" ZCOOL XiaoWei"` }}
           >
             {" "}
@@ -33,7 +33,7 @@ function EventCard(props) {
           </h2>
           {/* Location and date */}
           <div
-            className="text-[18px] flex flex-row mt-[15px] items-center"
+            className="text-[15px] flex flex-row mt-[15px] items-center"
             style={{ fontFamily: `" ZCOOL XiaoWei"` }}
           >
             <img src="/Location.png" className="scale-70 mr-[10px]" />
@@ -43,7 +43,7 @@ function EventCard(props) {
           </div>
           {/* Description */}
           <p
-            className="text-[20px] max-w-[569px] h-[115px] leading-none flex items-center justify-center"
+            className="text-[17px] max-w-[400px] h-[90px] leading-none flex items-center justify-center"
             style={{ fontFamily: `" ZCOOL XiaoWei"` }}
           >
             {props.eventDescription}
@@ -53,7 +53,7 @@ function EventCard(props) {
             {tags.map((tag, index) => (
               <button
                 key={index}
-                className="py-[8px] px-[15px] border-1 border-[#D9D9D9] rounded-[6px] text-[17px]"
+                className="py-[8px] px-[10px] border-1 border-[#D9D9D9] rounded-[6px] text-[17px]"
                 style={{ fontFamily: `"Poppins"` }}
               >
                 {tag}
@@ -83,14 +83,17 @@ function Events() {
     <div className="w-full min-h-screen flex flex-col justify-center bg-neutral-100">
       {/* top of page that displays the most recent event */}
       <div className="flex justify-center relative">
+        {/* Image of Most Recent Event */}
         <div className="relative w-full">
           <img
             src="/lanternfestivalhksa.png"
-            className="w-full object-contain"
+            className="h-[550px] w-full object-cover"
           />
           <div className="absolute inset-0 w-[99%] h-[98%] bg-[#513132] opacity-40 pointer-events-none z-10" />
+
+          {/* Card with the event details */}
         </div>
-        <div className="w-[816px] h-[432px] absolute left-20 top-44 text-white backdrop-blur-[4px] bg-[rgba(0,0,0,0.2)] rounded-xl border border-[#E7DBDB] z-20">
+        <div className="w-[816px] h-[432px] absolute left-20 top-8 text-white backdrop-blur-[4px] bg-[rgba(0,0,0,0.2)] rounded-xl border border-[#E7DBDB] z-20">
           <h1
             className="text-[56px] text-center tracking-[10px] text-shadow-white text-shadow-md mt-5 uppercase leading-15"
             style={{ fontFamily: `"Lexend Deca"` }}
@@ -146,7 +149,7 @@ function Events() {
             upcoming
               ? "bg-[#AE282D] text-white"
               : "bg-transparent text-[#989898]"
-          } w-[180px] h-[70px] rounded-[13px] text-[28px] transition-colors duration-200`}
+          } w-[150px] h-[60px] rounded-[13px] text-[23px] transition-colors duration-200`}
           style={{ fontFamily: `"Lexend Deca"` }}
           onClick={() => setUpcoming(true)}
         >
@@ -157,7 +160,7 @@ function Events() {
             !upcoming
               ? "bg-[#AE282D] text-white"
               : "bg-transparent text-[#989898]"
-          }  w-[180px] h-[70px] rounded-[13px] text-[28px] transition-colors duration-200`}
+          }  w-[150px] h-[60px] rounded-[13px] text-[23px] transition-colors duration-200`}
           style={{ fontFamily: `"Lexend Deca"` }}
           onClick={() => setUpcoming(false)}
         >
