@@ -5,7 +5,6 @@ import About from "./Pages/About";
 import Officers from "./Pages/Officers";
 import Events from "./Pages/Events";
 import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer"
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
           <Route path="/Officers" exact Component={Officers} />
           <Route path="/Events" exact Component={Events} />
         </Routes>
-        <Footer />
       </Router>
     </>
   );
