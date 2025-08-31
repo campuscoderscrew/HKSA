@@ -25,13 +25,13 @@ const Navbar = () => {
       
       <ul className="flex gap-6">
         <li className="relative">
-          <a href="#home" className="text-red-500 font-medium py-2 px-3 rounded-lg hover:bg-gray-400 transition duration-200" style={{ fontFamily: 'Exo, sans-serif' }}>Home</a>
+          <a href="home" className="text-red-500 font-medium py-2 px-3 rounded-lg hover:bg-gray-400 transition duration-200" style={{ fontFamily: 'Exo, sans-serif' }}>Home</a>
         </li>
         <li className="relative">
-          <a href="#about" className="text-red-500 font-medium py-2 px-3 rounded-lg hover:bg-gray-400 transition duration-200" style={{ fontFamily: 'Exo, sans-serif' }}>About</a>
+          <a href="about" className="text-red-500 font-medium py-2 px-3 rounded-lg hover:bg-gray-400 transition duration-200" style={{ fontFamily: 'Exo, sans-serif' }}>About</a>
         </li>
         <li className="relative" onMouseEnter={toggleEventsDropdown}>
-          <a href="#events" className="text-red-500 font-medium py-2 px-3 rounded-lg hover:bg-gray-400 transition duration-200" style={{ fontFamily: 'Exo, sans-serif' }}>
+          <a href="events" className="text-red-500 font-medium py-2 px-3 rounded-lg hover:bg-gray-400 transition duration-200" style={{ fontFamily: 'Exo, sans-serif' }}>
             Events ▾
           </a>
           {isEventsOpen && (
@@ -42,7 +42,7 @@ const Navbar = () => {
           )}
         </li>
         <li className="relative">
-          <a href="#officers" className="text-red-500 font-medium py-2 px-3 rounded-lg hover:bg-gray-400 transition duration-400" style={{ fontFamily: 'Exo, sans-serif' }}>Officers</a>
+          <a href="officers" className="text-red-500 font-medium py-2 px-3 rounded-lg hover:bg-gray-400 transition duration-400" style={{ fontFamily: 'Exo, sans-serif' }}>Officers</a>
         </li>
       </ul>
     </nav>
