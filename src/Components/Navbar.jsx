@@ -24,7 +24,7 @@ const Navbar = () => (
     <ul className="font-sans flex gap-6 md:flex-row md:static md:shadow-none md:translate-y-0 md:w-auto md:p-0 md:text-center
       flex-col absolute left-0 top-full w-full bg-white/95 shadow-lg text-left p-6
       transition-all duration-300 ease-in-out -translate-y-[100%] peer-checked:translate-y-0
-      md:opacity-100 md:pointer-events-auto md:z-10 md:mr-4
+      md:opacity-100 md:pointer-events-auto md:z-10 md:mr-4 
     ">
       <li className="w-full md:w-auto"><a href="/" className="text-red-500 font-bold py-2 px-2 rounded-lg block transition duration-200 hover:text-black-400 relative after:content-[''] after:block after:absolute after:left-0 after:md:left-1/2 after:bottom-0 after:w-0 after:h-0.5 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">Home</a></li>
       <li className="w-full md:w-auto"><a href="/about" className="text-red-500 font-bold py-2 px-2 rounded-lg block transition duration-200 hover:text-black-400 relative after:content-[''] after:block after:absolute after:left-0 after:md:left-1/2 after:bottom-0 after:w-0 after:h-0.5 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">About</a></li>
