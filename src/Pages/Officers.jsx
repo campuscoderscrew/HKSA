@@ -30,10 +30,10 @@ function Officers() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-900 via-orange-700 to-yellow-600 px-4 sm:px-10 py-10 relative pb-24">
       {/* Lantern decorations */}
-      <img src={"Lantern.png"} alt="lantern" className="absolute top-6 left-10 w-14 animate-bounce max-sm:w-10 max-sm:left-4" />
-      <img src={"Lantern.png"} alt="lantern" className="absolute top-3 left-80 w-14 animate-bounce max-sm:left-1/3 max-sm:w-10" />
-      <img src={"Lantern.png"} alt="lantern" className="absolute top-3 right-80 w-14 animate-bounce max-sm:right-1/3 max-sm:w-10" />
-      <img src={"Lantern.png"} alt="lantern" className="absolute top-6 right-10 w-14 animate-bounce max-sm:w-10 max-sm:right-4" />
+      <img src={"Lantern.png"} alt="lantern" className="absolute top-2 left-10 w-14 animate-bounce max-sm:w-10 max-sm:left-4" />
+      <img src={"Lantern.png"} alt="lantern" className="absolute top-2 left-80 w-14 animate-bounce max-sm:left-1/3 max-sm:w-10" />
+      <img src={"Lantern.png"} alt="lantern" className="absolute top-2 right-80 w-14 animate-bounce max-sm:right-1/3 max-sm:w-10" />
+      <img src={"Lantern.png"} alt="lantern" className="absolute top-2 right-10 w-14 animate-bounce max-sm:w-10 max-sm:right-4" />
 
       <h1
         className="text-center text-3xl font-bold text-white mb-12 max-sm:text-2xl max-sm:mb-8"

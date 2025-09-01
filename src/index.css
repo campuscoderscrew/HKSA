@@ -11,5 +11,25 @@
 }
 
 @layer components {
-
+    /* Used in ./src/Components/Navbar.jsx */
+	.nav-hamburger-icon {
+		opacity: 1;
+		transform: rotate(0deg) scale(1);
+		transition: opacity 0.3s, transform 0.4s;
+		z-index: 2;
+	}
+	.peer:checked ~ label .nav-hamburger-icon {
+		opacity: 0;
+		transform: rotate(180deg) scale(0.7);
+	}
+	.nav-close-icon {
+		opacity: 0;
+		transform: rotate(-180deg) scale(0.7);
+		transition: opacity 0.3s, transform 0.4s;
+		z-index: 3;
+	}
+	.peer:checked ~ label .nav-close-icon {
+		opacity: 1;
+		transform: rotate(0deg) scale(1);
+	}
 }
