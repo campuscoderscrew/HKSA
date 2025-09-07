@@ -5,7 +5,7 @@ const Navbar = () => (
     <nav className="p-4 z-20 bg-white w-full">
       <div className="flex items-center space-x-5">
         <a href="/" className="flex items-center">
-          <img src={"hong kong.png"} alt="Logo" className="w-10 h-auto" />
+          <img src={"hksalogo.png"} alt="Logo" className="w-14 h-auto" />
           <h1 className="text-red-500 text-xl font-bold ml-5 font-sans">Hong Kong Student Association</h1>
         </a>
       </div>
