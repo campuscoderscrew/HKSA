@@ -91,7 +91,7 @@ function Home() {
 
           <div class="flex justify-center mt-5 lg:mt-10">
             <input type="text" class="lg:hidden w-full bg-white rounded-[15px_0_0_15px]" style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }} />
-            <input type="text" placeholder='example@gmail.com' class="hidden lg:inline w-full px-8.75 bg-white rounded-[15px_0_0_15px] text-[28px] leading-4" style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }} />
+            <input type="text" placeholder='example@gmail.com' class="hidden lg:inline w-full px-8.75 bg-white rounded-[15px_0_0_15px] text-[20px] leading-4" style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }} />
             <button class="lg:hidden bg-[linear-gradient(125deg,_#DC9536,_#FFC476,_#DC9536)] cursor-pointer rounded-[0_15px_15px_0] w-[36px] h-[33px]"></button>
             <button class="hidden lg:inline bg-[linear-gradient(125deg,_#DC9536,_#FFC476,_#DC9536)] cursor-pointer rounded-[0_15px_15px_0] w-[125px] h-[77px]"></button>
           </div>
