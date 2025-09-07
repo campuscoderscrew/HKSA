@@ -2,91 +2,14 @@
   "events": [
     {
       "id": 1,
-      "eventName": "Big Little Week",
-      "exactDate": "2023-10-01T17:00:00Z",
-      "date": "October 1",
-      "time": "5:00 PM - 7:00 PM",
-      "location": "Stamp Ballroom",
+      "eventName": "Egg Waffle GBM",
+      "exactDate": "2025-09-10T18:00:00Z",
+      "date": "September 10",
+      "time": "6:00 PM - 7:00 PM",
+      "location": "ESJ TBD",
       "graphicDesign": "/lanternfestivalhksa.png",
-      "eventDescription": " Lorem ipsum sit amet dolor, lorem ipsum sit amet dolor lorem ipsum sit amet dolorLorem ipsum sit amet dolor, lorem ipsum sit amet dolor lorem ipsum sit amet dolor ",
-      "tags": ["Social", "Fundraiser", "Free"]
-    },
-    {
-      "id": 2,
-      "eventName": "Family Night GBM",
-      "exactDate": "2023-05-25T17:00:00Z",
-      "date": "May 25",
-      "time": "5:00 PM - 7:00 PM",
-      "location": "Tawes 0241",
-      "graphicDesign": "/lanternfestivalhksa.png",
-      "eventDescription": "Lorem ipsum sit amet dolor, lorem ipsum sit amet dolor lorem ipsum sit amet dolor",
-      "tags": ["Social", "Fundraiser"]
-    },
-    {
-      "id": 3,
-      "eventName": "Spot Mini Fundraiser",
-      "exactDate": "2023-06-02T17:00:00Z",
-      "date": "June 2",
-      "time": "5:00 PM - 7:00 PM",
-      "location": "The Spot Mini",
-      "graphicDesign": "/lanternfestivalhksa.png",
-      "eventDescription": "Lorem ipsum sit amet dolor, lorem ipsum sit amet dolor lorem ipsum sit amet dolor",
-      "tags": ["Social", "Fundraiser"]
-    },
-    {
-      "id": 4,
-      "eventName": "Charity Night",
-      "exactDate": "2023-03-27T18:00:00Z",
-      "date": "March 27",
-      "time": "6:00 PM - 8:00 PM",
-      "location": "Tawes 0241",
-      "graphicDesign": "/lanternfestivalhksa.png",
-      "eventDescription": "Lorem ipsum sit amet dolor, lorem ipsum sit amet dolor lorem ipsum sit amet dolor",
-      "tags": ["Social", "Fundraiser"]
-    },
-    {
-      "id": 5,
-      "eventName": "Hong Kong Festival",
-      "exactDate": "2026-11-25T18:00:00Z",
-      "date": "November 25",
-      "time": "6:00 PM - 8:00 PM",
-      "location": "Stamp Ballroom",
-      "graphicDesign": "/lanternfestivalhksa.png",
-      "eventDescription": "Lorem ipsum sit amet dolor, lorem ipsum sit amet dolor lorem ipsum sit amet dolor",
-      "tags": ["Social", "Fundraiser"]
-    },
-    {
-      "id": 6,
-      "eventName": "Night in Hong Kong",
-      "exactDate": "2026-04-06T18:00:00Z",
-      "date": "April 6",
-      "time": "6:00 PM - 8:00 PM",
-      "location": "Stamp Ballroom",
-      "graphicDesign": "/lanternfestivalhksa.png",
-      "eventDescription": "Lorem ipsum sit amet dolor, lorem ipsum sit amet dolor lorem ipsum sit amet dolor",
-      "tags": ["Social", "Fundraiser"]
-    },
-    {
-      "id": 7,
-      "eventName": "Valentine's GBM",
-      "exactDate": "2026-07-16T18:00:00Z",
-      "date": "July 16",
-      "time": "6:00 PM - 8:00 PM",
-      "location": "ESJ 1202",
-      "graphicDesign": "/lanternfestivalhksa.png",
-      "eventDescription": "Lorem ipsum sit amet dolor, lorem ipsum sit amet dolor lorem ipsum sit amet dolor",
-      "tags": ["Social", "Fundraiser"]
-    },
-    {
-      "id": 8,
-      "eventName": "Mogee Tea Fundraiser",
-      "exactDate": "2026-01-04T18:00:00Z",
-      "date": "January 4",
-      "time": "6:00 PM - 8:00 PM",
-      "location": "Mogee Tea",
-      "graphicDesign": "/lanternfestivalhksa.png",
-      "eventDescription": "Lorem ipsum sit amet dolor, lorem ipsum sit amet dolor lorem ipsum sit amet dolor",
-      "tags": ["Social", "Fundraiser"]
+      "eventDescription": "Come to our first GBM of the year! Get to know our new members with some fun activities and learn more about our organization!",
+      "tags": ["Social"]
     }
   ]
 }
