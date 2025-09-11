@@ -25,7 +25,7 @@ function EventCard(props) {
         <div className="flex flex-col ml-[20px] w-[90%]">
           {/* Title */}
           <h2
-            className="uppercase text-[23px] tracking-[11px] leading-8.5 whitespace-nowrap"
+            className="uppercase text-[23px] tracking-[11px] leading-8.5 whitespace-wrap"
             style={{ fontFamily: `" ZCOOL XiaoWei"` }}
           >
             {" "}
