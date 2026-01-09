@@ -2,12 +2,12 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='w-fit lg:w-fit h-auto relative overflow-hidden'>
+        <div className='w-fit lg:w-fit h-auto relative overflow-hidden text-["Inter"]'>
             <img class="max-h-[500px] w-screen" src="../src/Images/footer-background.png" alt="" />
-            <div class="w-full flex flex-col items-center absolute top-1/2 -translate-y-1/2 gap-8 text-center">
-                <div class="w-9/10 mx-auto flex flex-col items-center gap-2 text-center">
-                    <h2 class="text-white text-[32px] lg:text-[56px] tracking-[5%]" style={{ fontFamily: 'Tiro Bangla, serif' }}>Join Us</h2>
-                    <p class="max-w-9/10 lg:w-[420px] text-[20px] lg:text-[28px] text-white leading-[28px]"  style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }}>Interested in joining the club? Reach out to us!</p>
+            <div class="w-full flex flex-col items-center absolute top-0 -translate-y-0 gap-10 text-center">
+                <div class="w-9/10 mx-auto flex flex-col items-center gap-8 text-center">
+                    <h2 class="font-bold text-white text-[32px] lg:text-[55px] tracking-[5%]">Join Us</h2>
+                    <p class="max-w-9/10 lg:w-[420px] text-[20px] lg:text-[28px] text-white leading-[28px]">Interested in joining the club? Reach out to us!</p>
                 </div>
                 <div className='flex gap-8.5'>
                     <a href="https://discord.com/invite/99etMZudD4?fbclid=PAZXh0bgNhZW0CMTEAAacpQ12TC4q8kWpgEDLwy-zKrpdjZahCrqVQijSf43omnacZZNhFvtCZ0ULJEA_aem_jBASs2Au-Sikf6Uir5YUBg">
@@ -21,6 +21,7 @@ const Footer = () => {
                     </a>
                 </div>
             </div>
+            <p class="text-[#AFAFAF] text-[22px] absolute bottom-5 right-12">@ 2025 Campus Coders Crew</p>
         </div>
     );
 }

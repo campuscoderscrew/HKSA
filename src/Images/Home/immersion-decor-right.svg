@@ -1,3 +1,17 @@
-<svg width="186" height="118" viewBox="0 0 186 118" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.99999 2L21.1777 2L21.1777 34.013L2 34.013L2 18.1948L48.6281 18.1948L48.6281 34.013L28.6983 34.013L28.6983 2L142.636 2L142.636 34.013L124.587 34.013L124.587 18.1948L166.326 18.1948L166.326 34.013M184 118L184 42.2987L166.702 42.2987M166.702 42.2987L149.405 42.2987L149.405 61.5065L166.326 61.5065L166.326 34.013M166.702 42.2987L166.326 34.013M184 34.013L184 2L149.405 2L149.405 34.013L184 34.013Z" stroke="#C10800" stroke-width="3"/>
+<svg width="194" height="126" viewBox="0 0 194 126" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_7671_1266)">
+<path d="M5.99999 6L25.1777 6L25.1777 38.013L6 38.013L6 22.1948L52.6281 22.1948L52.6281 38.013L32.6983 38.013L32.6983 6L146.636 6L146.636 38.013L128.587 38.013L128.587 22.1948L170.326 22.1948L170.326 38.013M188 122L188 46.2987L170.702 46.2987M170.702 46.2987L153.405 46.2987L153.405 65.5065L170.326 65.5065L170.326 38.013M170.702 46.2987L170.326 38.013M188 38.013L188 6L153.405 6L153.405 38.013L188 38.013Z" stroke="#E05259" stroke-width="4" shape-rendering="crispEdges"/>
+</g>
+<defs>
+<filter id="filter0_d_7671_1266" x="0" y="0" width="194" height="126" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.678431 0 0 0 0 0.121569 0 0 0 0 0.14902 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_7671_1266"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_7671_1266" result="shape"/>
+</filter>
+</defs>
 </svg>
