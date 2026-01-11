@@ -1,7 +1,9 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, A11y, Navigation } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import EventCard from '../Components/EventCard';
-import Footer from "../Components/Footer"
+import Footer from "../Components/Footer";
 
 function Home() {
   return (
@@ -39,8 +41,8 @@ function Home() {
       </div>
 
       { /* Upcoming Events */ }
-      <div class="w-9/10 h-fit m-auto">
-        <div class="flex gap-25 justify-center">
+      <div class="w-9/10 h-fit m-auto mb-35">
+        <div class="flex gap-25 justify-center mb-12.5">
           <img src="../src/Images/Home/red-clouds.svg" alt="" />
           <div class="flex flex-col gap-4 text-center">
             <h2 class="font-bold text-[#E0A552] text-[24px] lg:text-[60px] tracking-[5%]">Upcoming Events</h2>
@@ -48,6 +50,7 @@ function Home() {
           </div>
           <img src="../src/Images/Home/red-clouds.svg" alt="" />
         </div>
+
         <div class="flex gap-13">
           <EventCard eventTitle='Upcoming Event'
                      date="Sat. Apr 01"
@@ -71,8 +74,39 @@ function Home() {
       </div>
 
       {/* Memories */}
-      <div class="w-full h-full bg-gradient-to-b from-[#B0282D] to-[#6C0F20] overflow-hidden">
-        
+      <div class="w-full h-full relative overflow-hidden">
+        <img class="w-screen h-auto" src="../src/Images/Home/memories-background.png" alt="" />
+        <div class="w-9/10 flex items-center gap-15 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+          <div class="w-1/2 flex flex-col text-center">
+            <h2 class="font-bold text-[#E0AC52] text-[32px] lg:text-[60px] tracking-[5%]">Memories</h2>
+            <p class="inline-block text-white text-[20px] lg:text-[30px] lg:leading-[36px]">These are some of our favorite moments</p>
+            <div class="relative mt-12.5">
+              <img class="absolute -top-2 left-0" src="../src/Images/Home/opening-quote.svg" alt="" />
+              <p class="text-left text-white text-[20px] lg:text-[24px] traacking-tight leading-8 border-8 [border-image-source:url(/src/Images/Home/quote-box.svg)] [border-image-slice:10] p-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <img class="absolute -bottom-2 right-0" src="../src/Images/Home/closing-quote.svg" alt="" />
+            </div>
+            <p class="font-bold text-[#E0AC52] text-[20px] lg:text-[30px] text-right tracking-[5%]"><span aria-hidden="true">- </span>John Doe</p>
+            <p class="font-bold text-[#E0AC52] text-[20px] lg:text-[24px] text-right tracking-[5%] -mt-1">9/28/2025</p>
+          </div>
+          <div class="w-1/2 h-fit pb-15 overflow-x-hidden" >
+            <Swiper
+              modules={[Navigation, Pagination, A11y]}
+              slidesPerView={1}
+              navigation
+              rewind
+              pagination={{ clickable: true }}
+            >
+              <SwiperSlide>
+                <a href="">
+                  <img src="../placeholder.png" alt="" />
+                </a>
+              </SwiperSlide>
+              <SwiperSlide><img src="../placeholder.png" alt="" /></SwiperSlide>
+              <SwiperSlide><img src="../placeholder.png" alt="" /></SwiperSlide>
+              <SwiperSlide><img src="../placeholder.png" alt="" /></SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
       </div>
       
 
@@ -84,7 +118,7 @@ function Home() {
             <img class="relative top-4 w-[10%] lg:w-full" src="../src/Images/Home/learn-more-decor.svg" alt="" />
             <div class="flex flex-col gap-2 text-center">
               <h2 class="font-bold text-[#E0AC52] text-[32px] lg:text-[60px] tracking-[5%]">Learn More</h2>
-              <p class="lg:w-[560px] inline-block text-white text-[20px] lg:text-[30px]">Want to learn more about what we do and who we are</p>
+              <p class="lg:w-[560px] inline-block text-white text-[20px] lg:text-[30px] lg:leading-[36px]">Want to learn more about what we do and who we are</p>
             </div>
             <img class="relative top-4 w-[10%] lg:w-full" src="../src/Images/Home/learn-more-decor.svg" alt="" />
           </div>

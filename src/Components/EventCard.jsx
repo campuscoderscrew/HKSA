@@ -3,7 +3,8 @@ import React from 'react';
 
 const EventCard = ({eventTitle="Upcoming Event", date, time, location, desc}) => {
     return (
-        <div>
+        <div class="relative w-fit">
+            <img class="absolute -top-8 z-10 -right-6" src="../src/Images/Home/star.svg" alt="" />
             <div class="flex flex-col gap-4 p-6 w-full bg-linear-[180deg,#6F151C_0%,#6F151C] text-white text-xl font-['Inter']" style={{clipPath: 'polygon(0% 0%, 100% 0, 100% 100%, 7.5% 100%, 0 96%)'}}>
                 <img src="../src/Images/Home/eventCardPlaceholder.png" alt="" />
                 <h3 class="font-bold text-[30px] text-[#E0A552] tracking-[5%]">{eventTitle}</h3>
