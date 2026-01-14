@@ -2,10 +2,10 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='w-fit lg:w-fit h-auto relative overflow-hidden text-["Inter"]'>
-            <img class="max-h-[500px] w-screen" src="../src/Images/footer-background.png" alt="" />
+        <div className='w-fit h-[40vh] md:h-auto relative overflow-hidden text-["Inter"]'>
+            <img class="h-full w-screen md:h-auto md:max-h-[500px]" src="../src/Images/footer-background.png" alt="" />
             <div class="w-full flex flex-col items-center absolute top-0 -translate-y-0 gap-10 text-center">
-                <div class="w-9/10 mx-auto flex flex-col items-center gap-8 text-center">
+                <div class="w-9/10 mx-auto flex flex-col items-center gap-4 md:gap-8 text-center">
                     <h2 class="font-bold text-white text-[32px] lg:text-[55px] tracking-[5%]">Join Us</h2>
                     <p class="max-w-9/10 lg:w-[420px] text-[20px] lg:text-[28px] text-white leading-[28px]">Interested in joining the club? Reach out to us!</p>
                 </div>
@@ -21,7 +21,7 @@ const Footer = () => {
                     </a>
                 </div>
             </div>
-            <p class="text-[#AFAFAF] text-[22px] absolute bottom-5 right-12">@ 2025 Campus Coders Crew</p>
+            <p class="text-[#AFAFAF] text-xs md:text-[22px] absolute bottom-5 right-12">@ 2025 Campus Coders Crew</p>
         </div>
     );
 }
