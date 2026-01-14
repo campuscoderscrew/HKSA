@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useRef, useEffect } from 'react';
+import { useState} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Navigation, Autoplay, Keyboard } from 'swiper/modules';
 import { Link } from 'react-router-dom';
@@ -119,16 +119,27 @@ function Home() {
               onSlideChangeTransitionEnd={(swiper) => announceMessage("Showing slide " + (swiper.realIndex + 1))}
             >
               <SwiperSlide>
-                <a href="">
-                  <img src="../placeholder.png" alt="" />
+                <a href="/gallery"><img src="../placeholder.png" alt="" />
                 </a>
               </SwiperSlide>
-              <SwiperSlide><img src="../placeholder.png" alt="" /></SwiperSlide>
-              <SwiperSlide><img src="../placeholder.png" alt="" /></SwiperSlide>
-              <SwiperSlide><img src="../placeholder.png" alt="" /></SwiperSlide>
-              <SwiperSlide><img src="../placeholder.png" alt="" /></SwiperSlide>
-              <SwiperSlide><img src="../placeholder.png" alt="" /></SwiperSlide>
-              <SwiperSlide><img src="../placeholder.png" alt="" /></SwiperSlide>
+              <SwiperSlide>
+                <a href="/gallery"><img src="../placeholder.png" alt="" /></a>
+              </SwiperSlide>
+              <SwiperSlide>
+                <a href="/gallery"><img src="../placeholder.png" alt="" /></a>
+              </SwiperSlide>
+              <SwiperSlide>
+                <a href="/gallery"><img src="../placeholder.png" alt="" /></a>
+              </SwiperSlide>
+              <SwiperSlide>
+                <a href="/gallery"><img src="../placeholder.png" alt="" /></a>
+              </SwiperSlide>
+              <SwiperSlide>
+                <a href="/gallery"><img src="../placeholder.png" alt="" /></a>
+              </SwiperSlide>
+              <SwiperSlide>
+                <a href="/gallery"><img src="../placeholder.png" alt="" /></a>
+              </SwiperSlide>
 
               <div class='sr-only custom-swiper-live' aria-live='polite' aria-atomic="true">{message}</div>
             </Swiper>
