@@ -46,13 +46,8 @@
 	--swiper-pagination-color: #E0A552;
 	--swiper-pagination-bullet-inactive-color: #D9D9D9;
 	--swiper-pagination-bullet-inactive-opacity: 1;
-	--swiper-navigation-color: #6F151C;
+	--swiper-navigation-color: white;
 	overflow: visible;
-}
-
-.swiper-slide img {
-    width: 100%;
-    height: auto;
 }
 
 span.swiper-notification {

@@ -10,7 +10,7 @@ function Home() {
   const [message, setMessage] = useState();
 
   function announceMessage(newMessage) {
-    console.log(newMessage)
+    // console.log(newMessage)
     setMessage(newMessage);
     setTimeout(() => {
       setMessage('');
@@ -53,6 +53,7 @@ function Home() {
 
       { /* Upcoming Events */ }
       <div class="w-9/10 h-fit m-auto mb-35">
+        {/* Title */}
         <div class="flex gap-8 lg:gap-20 justify-center mb-12.5">
           <img class="w-3/20 md:w-1/5 md:max-w-[125px] lg:max-w-[175px] h-auto" src="/images/home/red-clouds.svg" alt="" />
           <div class="flex flex-col gap-4 text-center">
@@ -62,6 +63,7 @@ function Home() {
           <img class="w-3/20 md:w-1/5 md:max-w-[125px] lg:max-w-[175px] h-auto" src="/images/home/red-clouds.svg" alt="" />
         </div>
 
+        {/* Upcoming event cards */}
         <div class="flex flex-col lg:flex-row gap-13">
           <EventCard eventTitle='Upcoming Event'
                      date="Sat. Apr 01"
@@ -85,11 +87,9 @@ function Home() {
       </div>
 
       {/* Memories */}
-      {/* <div class="w-full h-screen relative overflow-hidden"> */}
       <div class="w-full h-fit flex items-center justify-center overflow-hidden bg-[url(/images/home/memories-background.png)] bg-cover md:bg-size-[100%_100%] bg-repeat-y md:bg-no-repeat pt-5 pb-16">
-        {/* <img class="w-auto h-[200vh] md:h-auto" src="/images/home/memories-background.png" alt="" /> */}
         <div class="w-9/10 h-full  my-15 flex flex-col md:flex-row items-center gap-12.5 md:gap-15">
-        {/* <div class="w-9/10 flex items-center gap-15 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"> */}
+          {/* Title and quote box */}
           <div class="w-full md:w-1/2 flex flex-col text-center">
             <h2 class="font-bold text-[#E0AC52] text-[32px] md:text-[60px] tracking-[5%]">Memories</h2>
             <p class="inline-block text-white text-[20px] md:text-[30px] lg:leading-[36px]">These are some of our favorite moments</p>
@@ -101,6 +101,8 @@ function Home() {
             <p class="font-bold text-[#E0AC52] text-[20px] md:text-[30px] 2xl:text-[40px] text-right tracking-[5%]"><span aria-hidden="true">- </span>John Doe</p>
             <p class="font-bold text-[#E0AC52] text-[20px] md:text-[24px] 2xl:text-[30px] text-right tracking-[5%] -mt-1">9/28/2025</p>
           </div>
+
+          {/* Carousel */}
           <div class="w-full md:w-1/2 h-auto pb-15 overflow-x-hidden" >
             <Swiper
               modules={[Navigation, Pagination, A11y, Autoplay]}
@@ -119,26 +121,39 @@ function Home() {
               onSlideChangeTransitionEnd={(swiper) => announceMessage("Showing slide " + (swiper.realIndex + 1))}
             >
               <SwiperSlide>
-                <a href="/gallery"><img src="../placeholder.png" alt="" />
+                <a href="/gallery">
+                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3269.JPG" alt="A woman points at egg waffles while a man stands nearby." />
                 </a>
               </SwiperSlide>
               <SwiperSlide>
-                <a href="/gallery"><img src="../placeholder.png" alt="" /></a>
+                <a href="/gallery">
+                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3273.JPG" alt="Two women pose by making peace signs with their hands" />
+                </a>
               </SwiperSlide>
               <SwiperSlide>
-                <a href="/gallery"><img src="../placeholder.png" alt="" /></a>
+                <a href="/gallery">
+                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3290.JPG" alt="People sitting in a lecture hall. Some groups of people chat with each other" />
+                </a>
               </SwiperSlide>
               <SwiperSlide>
-                <a href="/gallery"><img src="../placeholder.png" alt="" /></a>
+                <a href="/gallery">
+                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3292.JPG" alt="People sitting a lecture. A woman at the center of the images makes peace signs with her hands." />
+                </a>
               </SwiperSlide>
               <SwiperSlide>
-                <a href="/gallery"><img src="../placeholder.png" alt="" /></a>
+                <a href="/gallery">
+                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3298.JPG" alt="A group of people gathered around a table." />
+                </a>
               </SwiperSlide>
               <SwiperSlide>
-                <a href="/gallery"><img src="../placeholder.png" alt="" /></a>
+                <a href="/gallery">
+                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3307.JPG" alt="People sitting in a lecture hall" />
+                </a>
               </SwiperSlide>
               <SwiperSlide>
-                <a href="/gallery"><img src="../placeholder.png" alt="" /></a>
+                <a href="/gallery">
+                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3317.JPG" alt="People stand in line, holding paper plates with egg waffles on them." />
+                </a>
               </SwiperSlide>
 
               <div class='sr-only custom-swiper-live' aria-live='polite' aria-atomic="true">{message}</div>
@@ -150,6 +165,7 @@ function Home() {
 
       {/* Learn More */}
       <div class="w-9/10 h-fit mx-auto mb-20 text-center overflow-hidden">
+        {/* Title and About button */}
         <img src="/images/home/immersion-decor-left.svg" alt="" class="block top-18 relative rotate-90 w-1/6 lg:w-auto" />
         <div className='flex flex-col items-center gap-10 mt-8 lg:-mt-8'>
           <div class="flex gap-4">
@@ -164,6 +180,8 @@ function Home() {
             <Link to="/about">About Us</Link>
           </button>
         </div>
+        
+        {/* Email sign-up */}
         <div class="max-w-300 h-fit pt-8 lg:pt-12 pb-10 lg:pb-16 px-9 lg:px-50 mx-auto mt-16 bg-[linear-gradient(135deg,_#5D3238,_#5D3238) text-center rounded-[22px]">
           <div className='flex flex-col gap-2'>
             <h3 class="font-bold text-white text-[16px] md:text-[40px]">For all the updates</h3>
