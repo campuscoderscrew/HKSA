@@ -22,13 +22,13 @@ function Home() {
       {/* Header */}
       <div class="w-full h-auto relative overflow-hidden">
         <img class="h-auto w-screen" src="/images/home/hero-section.svg" alt="" />
-        <div class="absolute top-1/5 lg:top-1/6 left-1/2 -translate-x-1/2 -translate-y-1/5 lg:-translate-y-1/6 flex flex-col gap-2 text-center w-9/10 md:w-[620px]">
+        <div class="absolute top-1/2 min-[409px]:top-1/5 lg:top-1/6 left-1/2 -translate-x-1/2 -translate-y-1/2 min-[409px]:-translate-y-1/5 lg:-translate-y-1/6 flex flex-col gap-2 text-center w-9/10 md:w-[620px]">
           <h1 class="h-fit">
             <span class="h-fit block text-[#E0A552] text-[16px] md:text-[32px] font-bold leading-0 md:leading-16">University of Maryland's</span>
             <span class="h-fit block text-white text-[32px] uppercase md:text-[90px] font-bold leading-16 md:leading-26"> Hong Kong </span>
             <span class="h-fit block text-white text-[16px] uppercase md:text-[40px] font-bold leading-0 md:leading-12">Student Association</span>
           </h1>
-          <p class="max-w-4/5 text-[#E0A552] mt-2 text-[16px] md:text-[28px] mx-auto md:leading-8">A student organization dedicated to promoting awareness and appreciation of Hong Kong’s unique culture</p>
+          <p class="max-w-4/5 text-[#E0A552] mt-2 text-[16px] md:text-[28px] mx-auto leading-5 md:leading-8">A student organization dedicated to promoting awareness and appreciation of Hong Kong’s unique culture</p>
         </div>
       </div>
 
