@@ -16,6 +16,7 @@ function App() {
           <Route path="/About" exact Component={About} />
           <Route path="/Officers" exact Component={Officers} />
           <Route path="/Events" exact Component={Events} />
+          <Route path="/Events/:year" Component={Events} />
         </Routes>
       </Router>
     </>
