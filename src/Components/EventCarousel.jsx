@@ -12,9 +12,11 @@ function EventCarousel({ events, currentDate }) {
 
   if (!events || events.length === 0) {
     return (
-      <div className="bg-gradient-to-br from-rose-700 via-rose-500 to-amber-400 px-6 py-16 text-white">
+      <div className="bg-linear-to-b from-[#330008] to-[#AD1F26] px-6 py-16 text-white">
         <div className="mx-auto max-w-6xl text-center">
-          <p className="text-2xl font-semibold">No upcoming events</p>
+          <p className="text-2xl font-semibold text-[#E0A552]">
+            No upcoming events
+          </p>
           <p className="mt-2 text-white/85">Check back later for new events!</p>
         </div>
       </div>
@@ -142,9 +144,9 @@ function EventCarousel({ events, currentDate }) {
   const handlePointerLeave = () => finishDrag();
 
   return (
-    <div className="bg-gradient-to-br from-rose-700 via-rose-500 to-amber-400 py-12">
+    <div className="bg-linear-to-b from-[#330008] to-[#AD1F26] pt-8 pb-4">
       <div className="mx-auto w-full">
-        <h2 className="mb-8 text-center text-2xl font-bold text-white md:text-3xl">
+        <h2 className="mb-4 text-center text-2xl font-bold text-[#E0A552] md:text-3xl">
           Upcoming Events
         </h2>
 
@@ -152,15 +154,16 @@ function EventCarousel({ events, currentDate }) {
           {/* Left Click Area */}
           {events.length > 1 && (
             <div
+              id="left-click-area"
               onClick={goToPrevious}
-              className="absolute top-0 bottom-0 left-0 z-10 w-[calc(50%-26rem)] min-w-[2rem] cursor-pointer transition"
+              className="absolute top-0 bottom-0 left-0 z-10 w-[calc(50%-34rem)] min-w-8 cursor-pointer transition"
               aria-label="Previous event"
             />
           )}
 
           {/* Carousel Container */}
           <div
-            className="mx-auto w-full max-w-4xl overflow-hidden"
+            className="mx-auto w-full max-w-6xl overflow-hidden pt-4"
             style={{ touchAction: 'pan-y' }}
             title={
               hasSelection
@@ -174,12 +177,16 @@ function EventCarousel({ events, currentDate }) {
             onPointerLeave={handlePointerLeave}
           >
             <div
-              className="flex transition-transform duration-500 ease-in-out"
+              className="grid auto-cols-[100%] grid-flow-col transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
               {events.map((event) => (
-                <div key={event.id} className="w-full flex-shrink-0 px-4">
-                  <EventCard event={event} currentDate={currentDate} />
+                <div key={event.id} className="h-full w-full px-6 lg:px-8">
+                  <EventCard
+                    event={event}
+                    currentDate={currentDate}
+                    variant="carousel"
+                  />
                 </div>
               ))}
             </div>
@@ -188,8 +195,9 @@ function EventCarousel({ events, currentDate }) {
           {/* Right Click Area */}
           {events.length > 1 && (
             <div
+              id="right-click-area"
               onClick={goToNext}
-              className="absolute top-0 right-0 bottom-0 z-10 w-[calc(50%-26rem)] min-w-[2rem] cursor-pointer transition"
+              className="absolute top-0 right-0 bottom-0 z-10 w-[calc(50%-34rem)] min-w-8 cursor-pointer transition"
               aria-label="Next event"
             />
           )}
@@ -207,10 +215,10 @@ function EventCarousel({ events, currentDate }) {
                   onFocus={handleFocus}
                   onBlur={handleBlur}
                   title={`Click to focus on event and pause autoscroll.`}
-                  className={`h-3 w-3 rounded-full transition focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent focus:outline-none ${
+                  className={`h-3 w-3 rounded-full transition focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-transparent focus:outline-none ${
                     isActive
-                      ? 'scale-110 bg-white'
-                      : 'bg-white/40 hover:bg-white/60'
+                      ? 'scale-110 bg-[#6B141D] shadow'
+                      : 'bg-white/50 hover:bg-white/70'
                   }`}
                   aria-label={`Go to event ${index + 1}`}
                 />
