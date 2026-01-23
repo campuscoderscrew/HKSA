@@ -8,6 +8,14 @@ import Footer from "../Components/Footer";
 
 function Home() {
   const [message, setMessage] = useState();
+  const photos = [
+    {slide: 1, filename: "DSC_9664.JPG", altText:"A group of people gathered around a table playing cards."},
+    {slide: 2, filename: "DSC_3317.JPG", altText:"People stand in line, holding paper plates with egg waffles on them."},
+    {slide: 3, filename: "DSC_0243.JPG", altText:"A woman is handing a gift basket to another woman."},
+    {slide: 4, filename: "DSC_0032.JPG", altText:"Over-the-shoulder shot of a person looking at a worksheet on their phone."},
+    {slide: 5, filename: "DSCF2000.jpg", altText:"A man is decorating a tree ornament with a marker."},
+    {slide: 6, filename: "DSCF2007.jpg", altText:"A woman wearing a Santa hat is serving food to another woman with purple hair."},
+  ]
 
   function announceMessage(newMessage) {
     // console.log(newMessage)
@@ -64,7 +72,7 @@ function Home() {
         </div>
 
         {/* Upcoming event cards */}
-        <div class="flex flex-col lg:flex-row gap-13">
+        <div class="flex flex-wrap lg:flex-nowrap gap-13 justify-center">
           <EventCard eventTitle='Upcoming Event'
                      date="Sat. Apr 01"
                      time="4:30pm"
@@ -87,10 +95,10 @@ function Home() {
       </div>
 
       {/* Memories */}
-      <div class="w-full h-fit flex items-center justify-center overflow-hidden bg-[url(/images/home/memories-background.png)] bg-cover md:bg-size-[100%_100%] bg-repeat-y md:bg-no-repeat pt-5 pb-16">
-        <div class="w-9/10 h-full  my-15 flex flex-col md:flex-row items-center gap-12.5 md:gap-15">
+      <div class="w-full h-fit flex items-center justify-center overflow-hidden bg-[url(/images/home/memories-background.png)] bg-cover lg:bg-size-[100%_100%] bg-repeat-y md:bg-no-repeat pt-5 pb-16">
+        <div class="w-9/10 h-full my-15 xl:mt-25 flex flex-col lg:flex-row items-center gap-12.5 md:gap-15">
           {/* Title and quote box */}
-          <div class="w-full md:w-1/2 flex flex-col text-center">
+          <div class="w-full lg:w-1/2 flex flex-col text-center">
             <h2 class="font-bold text-[#E0AC52] text-[32px] md:text-[60px] tracking-[5%]">Memories</h2>
             <p class="inline-block text-white text-[20px] md:text-[30px] lg:leading-[36px]">These are some of our favorite moments</p>
             <div class="relative mt-12.5">
@@ -103,7 +111,7 @@ function Home() {
           </div>
 
           {/* Carousel */}
-          <div class="w-full md:w-1/2 h-auto pb-15 overflow-x-hidden" >
+          <div class="w-full lg:w-1/2 h-auto pb-15 overflow-x-hidden" >
             <Swiper
               modules={[Navigation, Pagination, A11y, Autoplay]}
               slidesPerView={1}
@@ -120,41 +128,15 @@ function Home() {
               }}
               onSlideChangeTransitionEnd={(swiper) => announceMessage("Showing slide " + (swiper.realIndex + 1))}
             >
-              <SwiperSlide>
-                <a href="/gallery">
-                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3269.JPG" alt="A woman points at egg waffles while a man stands nearby." />
-                </a>
-              </SwiperSlide>
-              <SwiperSlide>
-                <a href="/gallery">
-                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3273.JPG" alt="Two women pose by making peace signs with their hands" />
-                </a>
-              </SwiperSlide>
-              <SwiperSlide>
-                <a href="/gallery">
-                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3290.JPG" alt="People sitting in a lecture hall. Some groups of people chat with each other" />
-                </a>
-              </SwiperSlide>
-              <SwiperSlide>
-                <a href="/gallery">
-                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3292.JPG" alt="People sitting a lecture. A woman at the center of the images makes peace signs with her hands." />
-                </a>
-              </SwiperSlide>
-              <SwiperSlide>
-                <a href="/gallery">
-                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3298.JPG" alt="A group of people gathered around a table." />
-                </a>
-              </SwiperSlide>
-              <SwiperSlide>
-                <a href="/gallery">
-                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3307.JPG" alt="People sitting in a lecture hall" />
-                </a>
-              </SwiperSlide>
-              <SwiperSlide>
-                <a href="/gallery">
-                  <img class="w-full h-full object-cover" src="/images/home/memories/DSC_3317.JPG" alt="People stand in line, holding paper plates with egg waffles on them." />
-                </a>
-              </SwiperSlide>
+              {photos.map((photo) => {
+                return (
+                  <SwiperSlide>
+                    <a href="/gallery">
+                      <img index={photo.slide} class="w-full h-full object-cover" src={"/images/home/memories/" + photo.filename} alt={photo.altText} />
+                    </a>
+                  </SwiperSlide>
+                )
+              })}
 
               <div class='sr-only custom-swiper-live' aria-live='polite' aria-atomic="true">{message}</div>
             </Swiper>
