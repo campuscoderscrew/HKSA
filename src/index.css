@@ -32,4 +32,17 @@
 		opacity: 1;
 		transform: rotate(0deg) scale(1);
 	}
+
+	.clip-card {
+		clip-path: polygon(
+			0% 8%,
+			6% 0%,
+			100% 0%,
+			100% 92%,
+			94% 100%,
+			0% 100%
+		);
+		will-change: transform;
+		transform: translateZ(0);
+	}
 }
