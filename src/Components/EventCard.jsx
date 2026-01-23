@@ -70,13 +70,13 @@ function EventCard({ event, currentDate, variant = 'grid' }) {
       )}
 
       <div
-        className={`relative ${isCarousel ? 'h-56 md:h-auto md:w-1/2 md:rounded-l-2xl' : 'h-48'} overflow-hidden rounded-t-2xl bg-[#4a0e15]`}
+        className={`relative ${isCarousel ? 'h-56 md:h-auto md:w-1/2 md:rounded-l-2xl lg:w-5/13' : 'h-48'} overflow-hidden rounded-t-2xl bg-[#4a0e15]`}
       >
         {hasImage ? (
           <img
             src={event.graphicDesign}
             alt={`${event.eventName} graphic`}
-            className={`h-full w-full object-cover ${isCarousel ? 'md:h-fll' : ''}`}
+            className={`h-full w-full object-cover ${isCarousel ? 'md:h-full' : ''}`}
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-linear-to-t from-[#4a0e15] to-[#6B141D] text-4xl font-semibold text-[#E0A552]">

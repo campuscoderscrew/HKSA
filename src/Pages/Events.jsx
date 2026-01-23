@@ -104,7 +104,7 @@ function Events() {
         style={{
           position: 'block',
           width: '100%',
-          height: '3rem',
+          height: '4rem',
           border: 'none',
         }}
       >
@@ -116,7 +116,7 @@ function Events() {
       </svg>
 
       {/* Events Flexbox Section */}
-      <section className="mx-auto max-w-6xl px-6 py-12 lg:px-8">
+      <section className="mx-auto max-w-6xl px-6 pb-12 lg:px-8">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
           <h2 className="text-2xl font-bold text-[#E0A552]">
             {isCurrentYear ? 'All Events' : `${activeYear} Events`}
