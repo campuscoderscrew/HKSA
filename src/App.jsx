@@ -14,6 +14,7 @@ function App() {
           <Route path="/" exact Component={Home} />
           <Route path="/About" exact Component={About} />
           <Route path="/Events" exact Component={Events} />
+          <Route path="/Events/:year" Component={Events} />
         </Routes>
       </Router>
     </>

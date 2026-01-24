@@ -1,201 +1,206 @@
-import { useState } from "react";
-import eventsData from "../mock-data/events-data.json";
-import { motion, AnimatePresence } from "motion/react";
-
-function EventCard(props) {
-  var [month, day] = props.date.split(" ");
-  month = month.slice(0, 3);
-  const tags = props.tags;
-  return (
-    <div className="w-[900px] h-[320px] border-[#cccccc] border-1 rounded-2xl px-[30px] py-[55px] flex flex-row mb-[50px]">
-      <div className="flex flex-row w-full">
-        <div
-          className="uppercase mr-[30px] gap-0 leading-none text-center"
-          style={{ fontFamily: `" ZCOOL XiaoWei"` }}
-        >
-          <p className="text-[25px]">{month}</p>
-          <p className="text-[55px]">{day}</p>
-        </div>
-        {/* Graphic Design */}
-        <img
-          src={props.graphicDesign}
-          alt={props.title}
-          className="w-[270px] h-[200px] rounded-[6px] object-cover"
-        />
-        <div className="flex flex-col ml-[20px] w-[90%]">
-          {/* Title */}
-          <h2
-            className="uppercase text-[23px] tracking-[11px] leading-8.5 whitespace-wrap"
-            style={{ fontFamily: `" ZCOOL XiaoWei"` }}
-          >
-            {" "}
-            {props.title}
-          </h2>
-          {/* Location and date */}
-          <div
-            className="text-[15px] flex flex-row mt-[15px] items-center"
-            style={{ fontFamily: `" ZCOOL XiaoWei"` }}
-          >
-            <img src="/Location.png" className="scale-70 mr-[10px]" />
-            <p className="mr-[20px]">{props.location}</p>
-            <div className="border-l-1 border-black h-full" />
-            <p className="ml-[20px]">{props.time}</p>
-          </div>
-          {/* Description */}
-          <p
-            className="text-[17px] max-w-[400px] h-[90px] leading-none flex items-center justify-center"
-            style={{ fontFamily: `" ZCOOL XiaoWei"` }}
-          >
-            {props.eventDescription}
-          </p>
-          {/* The tag buttons */}
-          <div className="flex flex-row flex-wrap gap-7">
-            {tags.map((tag, index) => (
-              <button
-                key={index}
-                className="py-[8px] px-[10px] border-1 border-[#D9D9D9] rounded-[6px] text-[17px]"
-                style={{ fontFamily: `"Poppins"` }}
-              >
-                {tag}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+import { useMemo, useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import EventCard from '../Components/EventCard';
+import EventCarousel from '../Components/EventCarousel';
+import yearsData from '../mock-data/years.json';
 
 function Events() {
-  const eventsList = eventsData.events;
-  const [upcoming, setUpcoming] = useState(true);
-  const today = new Date();
-  const upcomingEvents = eventsList
-    .filter((event) => new Date(event.exactDate) > today)
-    .sort((a, b) => new Date(a.exactDate) - new Date(b.exactDate));
-  const pastEvents = eventsList
-    .filter((event) => new Date(event.exactDate) <= today)
-    .sort((a, b) => new Date(b.exactDate) - new Date(a.exactDate));
-  const mostRecentEvent = upcomingEvents[0];
-  const [upcomingEventMonth, upcomingEventDay] =
-    mostRecentEvent?.date.split(" ");
+  const { year: yearParam } = useParams();
+  const navigate = useNavigate();
+  const availableYears = yearsData.years;
+  const currentDate = useMemo(() => new Date(), []);
+
+  // Check if year is valid and redirect if not
+  useEffect(() => {
+    if (yearParam) {
+      const parsedYear = parseInt(yearParam, 10);
+      if (!availableYears.includes(parsedYear)) {
+        navigate('/events', { replace: true });
+      }
+    }
+  }, [yearParam, availableYears, navigate]);
+
+  const activeYear = useMemo(() => {
+    const parsedYear = yearParam ? parseInt(yearParam, 10) : availableYears[0];
+    return availableYears.includes(parsedYear) ? parsedYear : availableYears[0];
+  }, [yearParam, availableYears]);
+
+  const [eventsForYear, setEventsForYear] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [sortDescending, setSortDescending] = useState(true);
+
+  // Dynamically import events for the active year
+  useEffect(() => {
+    setLoading(true);
+    import(`../mock-data/events-${activeYear}.json`)
+      .then((module) => {
+        setEventsForYear(module.default.events || []);
+        setLoading(false);
+      })
+      .catch(() => {
+        setEventsForYear([]);
+        setLoading(false);
+      });
+  }, [activeYear]);
+
+  const isCurrentYear = activeYear === currentDate.getFullYear();
+
+  const { upcomingEvents, allEvents } = useMemo(() => {
+    const upcoming = eventsForYear.filter(
+      (event) => new Date(event.date) >= currentDate,
+    );
+    return { upcomingEvents: upcoming, allEvents: eventsForYear };
+  }, [eventsForYear, currentDate]);
+
+  const sortedEvents = useMemo(() => {
+    const sorted = [...allEvents].sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return sortDescending ? dateB - dateA : dateA - dateB;
+    });
+    return sorted;
+  }, [allEvents, sortDescending]);
+
+  const toggleSort = () => {
+    setSortDescending((prev) => !prev);
+  };
+
+  if (loading) {
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-[#330008]">
+        <p className="text-lg text-white/85">Loading events...</p>
+      </main>
+    );
+  }
+
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center bg-neutral-100">
-      {/* top of page that displays the most recent event */}
-      <div className="flex justify-center relative">
-        {/* Image of Most Recent Event */}
-        <div className="relative w-full">
-          <img
-            src="/lanternfestivalhksa.png"
-            className="h-[550px] w-full object-cover"
-          />
-          <div className="absolute inset-0 w-[99%] h-[98%] bg-[#513132] opacity-40 pointer-events-none z-10" />
-
-          {/* Card with the event details */}
-        </div>
-        <div className="w-[816px] h-[432px] absolute left-20 top-8 text-white backdrop-blur-[4px] bg-[rgba(0,0,0,0.2)] rounded-xl border border-[#E7DBDB] z-20">
-          <h1
-            className="text-[50px] text-center tracking-[10px] text-shadow-white text-shadow-md mt-5 uppercase leading-15"
-            style={{ fontFamily: `"Lexend Deca"` }}
-          >
-            {mostRecentEvent?.eventName}
-          </h1>
-          <p
-            className="text-2xl ml-10 w-[718px] absolute mt-[33px] left-12 drop-shadow-lg"
-            style={{ fontFamily: `" ZCOOL XiaoWei"` }}
-          >
-            {mostRecentEvent?.eventDescription}
-          </p>
-          <div
-            className="flex flex-col absolute left-10 bottom-17 text-center leading-11"
-            style={{ fontFamily: `"Lexend Deca"` }}
-          >
-            <h1 className="text-[48px] font-bold drop-shadow-lg">
-              {upcomingEventDay}
+    <main className="min-h-screen bg-[#330008] text-white">
+      {/* Header Section */}
+      {isCurrentYear ? (
+        <EventCarousel events={upcomingEvents} currentDate={currentDate} />
+      ) : (
+        <section className="relative overflow-hidden bg-linear-to-b from-[#330008] to-[#AD1F26] px-6 pt-12 pb-0 text-white">
+          <div className="mx-auto max-w-6xl text-center">
+            <p className="text-sm font-semibold tracking-[0.2em] text-white/85 uppercase">
+              Archive
+            </p>
+            <h1 className="mt-2 text-3xl font-bold text-[#E0A552] md:text-4xl">
+              Events from {activeYear}
             </h1>
-            <strong className="text-[18px] drop-shadow-lg">
-              {upcomingEventMonth}
-            </strong>
+            <p className="mx-auto mt-3 max-w-2xl text-white/85">
+              Browse past events from {activeYear}.
+            </p>
           </div>
-          <div
-            className="absolute bottom-20 left-36 text-2xl drop-shadow-lg"
-            style={{ fontFamily: `" ZCOOL XiaoWei"` }}
-          >
-            <p>{mostRecentEvent?.location}</p>
-            <p>{mostRecentEvent?.time}</p>
-          </div>
-        </div>
-      </div>
-      <div className="w-full mt-[136px] mb-[100px] flex flex-col items-center justify-center space-y-[8px]">
-        <h1
-          style={{ fontFamily: `"Tiro Bangla"` }}
-          className="text-[55px] text-[#BD3921]"
-        >
-          Events
-        </h1>
-        <p
-          style={{ fontFamily: `" ZCOOL XiaoWei"` }}
-          className="text-[27px] w-[753px] text-center"
-        >
-          As part of our club, we host various events throughout the semester.
-          Check them out!
-        </p>
-      </div>
+        </section>
+      )}
 
-      {/* Buttons */}
-      <div className="w-full flex justify-center">
-        <div className="w-[900px] flex justify-start mt-4">
-          <button
-            className={`${
-              upcoming
-                ? "bg-[#AE282D] text-white"
-                : "bg-transparent text-[#989898]"
-            } w-[150px] h-[60px] rounded-[13px] text-[23px] transition-colors duration-200`}
-            style={{ fontFamily: `"Lexend Deca"` }}
-            onClick={() => setUpcoming(true)}
-          >
-            Upcoming
-          </button>
-          <button
-            className={`${
-              !upcoming
-                ? "bg-[#AE282D] text-white"
-                : "bg-transparent text-[#989898]"
-            }  w-[150px] h-[60px] rounded-[13px] text-[23px] transition-colors duration-200`}
-            style={{ fontFamily: `"Lexend Deca"` }}
-            onClick={() => setUpcoming(false)}
-          >
-            Previous
-          </button>
-        </div>
-      </div>
+      {/*Curved SVG divider background of white and svg of green*/}
+      <svg
+        width="1512"
+        height="176"
+        viewBox="0 0 1512 176"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        style={{
+          position: 'block',
+          width: '100%',
+          height: '4rem',
+          border: 'none',
+        }}
+      >
+        <rect width="1512" height="170" fill="#AD1F26" />
+        <path
+          d="M787 85.0693C378 157 149.875 79.7964 0 0V175.094H1519.07V85.0693C1377.07 71.0082 1055.19 37.903 787 85.0693Z"
+          fill="#330008"
+        />
+      </svg>
 
-      {/* Events List */}
-      <div className="w-full flex flex-col items-center justify-center mt-[50px] perspective-distant">
-        <AnimatePresence mode="wait">
-          {(upcoming ? upcomingEvents : pastEvents).map((event) => (
-            <motion.div
-              key={event.id}
-              initial={{ rotateX: 0, opacity: 0 }}
-              animate={{ rotateX: 360, opacity: 1 }}
-              exit={{ rotateX: 720, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+      {/* Events Flexbox Section */}
+      <section className="mx-auto max-w-6xl px-6 pb-12 lg:px-8">
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+          <h2 className="text-2xl font-bold text-[#E0A552]">
+            {isCurrentYear ? 'All Events' : `${activeYear} Events`}
+          </h2>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={toggleSort}
+              className="flex items-center gap-2 rounded-lg border border-[#E0A552]/30 bg-[#AD1F26] px-4 py-2 text-sm font-semibold text-white shadow transition hover:bg-[#c72830]"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="h-4 w-4"
+              >
+                {sortDescending ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3 4.5h14.25M3 9h9.75M3 13.5h7.25m3.25-.75L17.25 9m0 0L21 12.75M17.25 9v12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25"
+                  />
+                )}
+              </svg>
+              {sortDescending ? 'Newest First' : 'Oldest First'}
+            </button>
+
+            {/* Year Dropdown */}
+            <div className="relative">
+              <select
+                value={activeYear}
+                onChange={(e) =>
+                  (window.location.href = `/Events/${e.target.value}`)
+                }
+                className="cursor-pointer appearance-none rounded-lg border border-[#AD1F26]/60 bg-[#6B141D] px-4 py-2 pr-10 text-sm font-semibold text-white transition hover:border-[#E0A552] focus:ring-2 focus:ring-[#AD1F26] focus:outline-none"
+              >
+                {availableYears.map((yearValue) => (
+                  <option key={yearValue} value={yearValue}>
+                    {yearValue}
+                  </option>
+                ))}
+              </select>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        {sortedEvents.length === 0 ? (
+          <p className="text-lg text-white/85">
+            No events found for {activeYear}.
+          </p>
+        ) : (
+          <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+            {sortedEvents.map((event) => (
               <EventCard
                 key={event.id}
-                title={event.eventName}
-                date={event.date}
-                location={event.location}
-                time={event.time}
-                graphicDesign={event.graphicDesign}
-                eventDescription={event.eventDescription}
-                tags={event.tags}
+                event={event}
+                currentDate={currentDate}
               />
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </div>
-    </div>
+            ))}
+          </div>
+        )}
+      </section>
+    </main>
   );
 }
 
