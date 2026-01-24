@@ -1,37 +1,39 @@
+import { useMemo } from 'react';
 
-import React, { useMemo } from 'react';
+/*
+Arguments: EventCard({ event, currentDate, variant = 'grid' }) 
+- event: object containing event details (eventName, date, location, etc.)
+  - event.eventName: string - name of the event
+  - event.date: string (ISO format) - date of the event
+  - event.eventDescription: string - description of the event
+  - event.location: string - location name of the event
+  - [opt] event.locationURL: string - URL for the location
+  - [opt] event.startTime: string - start time of the event
+  - [opt] event.endTime: string - end time of the event
+  - [opt] event.graphicDesign: string - URL to the event image (MUST SAVE IMAGE IN "/public" FOLDER)
+  - [opt] event.postURL: string - URL to the event post
+  - [opt] event.galleryURL: string - URL to the event gallery
+- [opt] currentDate: Date object representing the current date (for upcoming event logic)
+- [opt] variant: 'grid' | 'carousel' to adjust styling based on context
 
-const StarIcon = () => (
-  <svg
-    width="2rem"
-    height="2rem"
-    viewBox="0 0 85 85"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M3.46919 44.4476L31.3854 52.2123C31.7187 52.3084 32.0221 52.4875 32.2673 52.7327C32.5125 52.9779 32.6916 53.2813 32.7877 53.6146L40.5524 81.5308C40.6733 81.9541 40.9288 82.3264 41.2802 82.5915C41.6316 82.8566 42.0598 83 42.5 83C42.9402 83 43.3684 82.8566 43.7198 82.5915C44.0712 82.3264 44.3267 81.9541 44.4476 81.5308L52.2123 53.6146C52.3084 53.2813 52.4875 52.9779 52.7327 52.7327C52.9779 52.4875 53.2813 52.3084 53.6146 52.2123L81.5308 44.4476C81.9541 44.3267 82.3264 44.0712 82.5915 43.7198C82.8566 43.3684 83 42.9402 83 42.5C83 42.0598 82.8566 41.6316 82.5915 41.2802C82.3264 40.9288 81.9541 40.6733 81.5308 40.5524L53.6146 32.7877C53.2813 32.6916 52.9779 32.5125 52.7327 32.2673C52.4875 32.0221 52.3084 31.7187 52.2123 31.3854L44.4476 3.46919C44.3267 3.04593 44.0712 2.67358 43.7198 2.40849C43.3684 2.1434 42.9402 2 42.5 2C42.0598 2 41.6316 2.1434 41.2802 2.40849C40.9288 2.67358 40.6733 3.04593 40.5524 3.46919L32.7877 31.3854C32.6916 31.7187 32.5125 32.0221 32.2673 32.2673C32.0221 32.5125 31.7187 32.6916 31.3854 32.7877L3.46919 40.5524C3.04593 40.6733 2.67358 40.9288 2.40849 41.2802C2.1434 41.6316 2 42.0598 2 42.5C2 42.9402 2.1434 43.3684 2.40849 43.7198C2.67358 44.0712 3.04593 44.3267 3.46919 44.4476Z"
-      fill="url(#paint0_linear_7689_3609)"
-      stroke="#E0B552"
-      stroke-width="4"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-    <defs>
-      <linearGradient
-        id="paint0_linear_7689_3609"
-        x1="24.8154"
-        y1="11.883"
-        x2="60.1846"
-        y2="73.117"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stop-color="#E0C852" />
-        <stop offset="1" stop-color="#E0A552" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
+Example Usage:
+<EventCard 
+  event={{
+    eventName: "Spring Festival",
+    date: "2024-03-21T18:00:00Z",
+    eventDescription: "Celebrate the arrival of spring with us!",
+    location: "Adele H. Stamp Student Union",
+    locationURL: "https://www.google.com/maps?q=Adele+H.+Stamp+Student+Union",
+    startTime: "6:00 PM",
+    endTime: "9:00 PM",
+    graphicDesign: "/images/events/spring-festival.jpg",
+    postURL: "/images/events/spring-festival.jpg",
+    galleryURL: "https://hksa.org/gallery/spring-festival"
+  }} 
+  currentDate={new Date()} 
+  variant="grid"
+/>
+*/
 
 function EventCard({ event, currentDate, variant = 'grid' }) {
   const eventDate = useMemo(() => new Date(event.date), [event.date]);
@@ -51,11 +53,11 @@ function EventCard({ event, currentDate, variant = 'grid' }) {
   const timeWindow = [event.startTime, event.endTime]
     .filter(Boolean)
     .join(' – ');
-  const isCarousel = variant === 'carousel';
+  const isFlex = variant === 'flex';
 
   const cardClasses = [
     'relative flex',
-    isCarousel ? 'h-full flex-col md:flex-row' : 'flex-col',
+    isFlex ? 'h-full flex-col md:flex-row' : 'flex-col',
     'bg-[#6B141D] border border-[#AD1F26]/30 rounded-2xl',
   ].join(' ');
 
@@ -64,44 +66,72 @@ function EventCard({ event, currentDate, variant = 'grid' }) {
       {showStar && (
         <div
           title={`Upcoming in ${Math.ceil((eventDate - currentDate) / (1000 * 60 * 60 * 24))} days`}
-          className="absolute -top-2 -right-2 z-1 text-[#E0A552]"
+          className="absolute -top-4 -right-4 z-1 text-[#E0A552]"
         >
-          <StarIcon />
+          <svg
+            width="2.5rem"
+            height="2.5rem"
+            viewBox="0 0 85 85"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.46919 44.4476L31.3854 52.2123C31.7187 52.3084 32.0221 52.4875 32.2673 52.7327C32.5125 52.9779 32.6916 53.2813 32.7877 53.6146L40.5524 81.5308C40.6733 81.9541 40.9288 82.3264 41.2802 82.5915C41.6316 82.8566 42.0598 83 42.5 83C42.9402 83 43.3684 82.8566 43.7198 82.5915C44.0712 82.3264 44.3267 81.9541 44.4476 81.5308L52.2123 53.6146C52.3084 53.2813 52.4875 52.9779 52.7327 52.7327C52.9779 52.4875 53.2813 52.3084 53.6146 52.2123L81.5308 44.4476C81.9541 44.3267 82.3264 44.0712 82.5915 43.7198C82.8566 43.3684 83 42.9402 83 42.5C83 42.0598 82.8566 41.6316 82.5915 41.2802C82.3264 40.9288 81.9541 40.6733 81.5308 40.5524L53.6146 32.7877C53.2813 32.6916 52.9779 32.5125 52.7327 32.2673C52.4875 32.0221 52.3084 31.7187 52.2123 31.3854L44.4476 3.46919C44.3267 3.04593 44.0712 2.67358 43.7198 2.40849C43.3684 2.1434 42.9402 2 42.5 2C42.0598 2 41.6316 2.1434 41.2802 2.40849C40.9288 2.67358 40.6733 3.04593 40.5524 3.46919L32.7877 31.3854C32.6916 31.7187 32.5125 32.0221 32.2673 32.2673C32.0221 32.5125 31.7187 32.6916 31.3854 32.7877L3.46919 40.5524C3.04593 40.6733 2.67358 40.9288 2.40849 41.2802C2.1434 41.6316 2 42.0598 2 42.5C2 42.9402 2.1434 43.3684 2.40849 43.7198C2.67358 44.0712 3.04593 44.3267 3.46919 44.4476Z"
+              fill="url(#paint0_linear_7689_3609)"
+              stroke="#E0B552"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_7689_3609"
+                x1="24.8154"
+                y1="11.883"
+                x2="60.1846"
+                y2="73.117"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#E0C852" />
+                <stop offset="1" stop-color="#E0A552" />
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
       )}
 
       <div
-        className={`relative ${isCarousel ? 'h-56 md:h-auto md:w-1/2 md:rounded-l-2xl lg:w-5/13' : 'h-48'} overflow-hidden rounded-t-2xl bg-[#4a0e15]`}
+        className={`relative ${isFlex ? 'h-56 rounded-t-2xl md:h-auto md:w-1/2 md:rounded-tr-none md:rounded-l-2xl lg:w-5/12' : 'h-48 rounded-t-2xl'} overflow-hidden bg-[#4a0e15]`}
       >
         {hasImage ? (
           <img
             src={event.graphicDesign}
             alt={`${event.eventName} graphic`}
-            className={`h-full w-full object-cover ${isCarousel ? 'md:h-full' : ''}`}
+            className={`h-full w-full object-cover ${isFlex ? 'md:h-full' : ''}`}
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-linear-to-t from-[#4a0e15] to-[#6B141D] text-4xl font-semibold text-[#E0A552]">
             HKSA Event
           </div>
         )}
-        <span className="absolute bottom-3 left-3 rounded-full border border-[#E0A552]/60 bg-[#6B141D]/70 px-3 py-1 text-xs font-semibold text-rose-100 backdrop-blur">
+        <span className={`absolute bottom-3 left-3 rounded-full border border-[#E0A552]/60 bg-[#6B141D]/70 px-3 py-1 font-semibold text-white backdrop-blur ${isFlex ? 'text-sm md:text-base' : 'text-sm'}`}>
           {formattedDate}
         </span>
       </div>
 
       <div
-        className={`flex flex-1 flex-col gap-3 p-5 ${isCarousel ? 'md:w-1/2' : ''}`}
+        className={`flex flex-1 flex-col gap-3 p-5 ${isFlex ? 'md:w-1/2' : ''}`}
       >
         <div className="flex flex-col gap-1">
-          <h3 className="text-xl leading-tight font-semibold text-[#E0A552]">
+          <h3 className={`leading-tight font-semibold text-[#E0A552] ${isFlex ? 'text-xl md:text-2xl lg:text-3xl' : 'text-xl'}`}>
             {event.eventName}
           </h3>
-          <p className="text-sm leading-relaxed text-white/85">
+          <p className={`leading-relaxed text-white ${isFlex ? 'text-base md:text-lg' : 'text-base'}`}>
             {event.eventDescription}
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-2 text-sm text-white">
+        <div className={`flex flex-wrap gap-2 text-white ${isFlex ? 'text-base md:text-lg' : 'text-base'}`}>
           {event.locationURL ? (
             <a
               href={event.locationURL}
@@ -159,7 +189,7 @@ function EventCard({ event, currentDate, variant = 'grid' }) {
               href={event.postURL}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-lg bg-[#AD1F26] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#c72830]"
+              className={`inline-flex items-center justify-center rounded-lg bg-[#AD1F26] px-4 py-2 font-semibold text-white transition hover:bg-[#c72830] ${isFlex ? 'text-base md:text-lg' : 'text-base'}`}
             >
               Event Post
             </a>
@@ -169,7 +199,7 @@ function EventCard({ event, currentDate, variant = 'grid' }) {
               href={event.galleryURL}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-lg border border-[#E0A552] bg-transparent px-4 py-2 text-sm font-semibold text-[#E0A552] transition hover:bg-[#E0A552]/15"
+              className={`inline-flex items-center justify-center rounded-lg border border-[#E0A552] bg-transparent px-4 py-2 font-semibold text-[#E0A552] transition hover:bg-[#E0A552]/15 ${isFlex ? 'text-base md:text-lg' : 'text-base'}`}
             >
               Gallery
             </a>
@@ -178,45 +208,6 @@ function EventCard({ event, currentDate, variant = 'grid' }) {
       </div>
     </card>
   );
-}
-
-export default EventCard;
-=======
-import { div } from 'motion/react-client';
-import React from 'react';
-
-const EventCard = ({eventTitle="Upcoming Event", date, time, location, desc}) => {
-    return (
-        <div class="relative w-fit md:max-w-[300px] lg:max-w-none">
-            <img class="w-[40px] sm:w-[68px] h-[40px] sm:h-[68px] absolute z-10 -top-5 sm:-top-8 -right-4 sm:-right-6" src="/images/home/star.svg" alt="" />
-            <div class="flex flex-col gap-4 p-6 w-full bg-linear-[180deg,#6F151C_0%,#6F151C] text-white text-lg md:text-xl font-['Inter']" style={{clipPath: 'polygon(0% 0%, 100% 0, 100% 100%, 7.5% 100%, 0 96%)'}}>
-                <img src="/images/home/eventCardPlaceholder.png" alt="" />
-                <h3 class="font-bold text-xl lg:text-[30px] text-[#E0A552] tracking-[5%]">{eventTitle}</h3>
-                
-                {/* Event details */}
-                <div>
-                    <span class="mb-1 flex max-[1081px]:flex-col max-[1081px]:gap-1.25 gap-5">
-                        <span class="flex flex-nowrap gap-1">
-                            <img class="w-[18px] mr-1 h-auto" src="/images/home/calendar-icon.svg" alt="" />
-                            <p class="inline-block whitespace-nowrap">{date}</p>
-                        </span>
-
-                        <span class="flex flex-nowrap gap-1">
-                            <img class="w-[18px] mr-1 h-auto" src="/images/home/clock-icon.svg" alt="" />
-                            <p class="inline-block whitespace-nowrap">{time}</p>
-                        </span>
-                    </span>
-                <span class="flex items-start">
-                    <img class="w-[18px] mr-1 pt-1.25 h-auto" src="/images/home/social-contact-icon.svg" alt="" />
-                    <p>{location}</p>
-                </span>
-                <p>{desc}</p>
-                </div>
-
-                <button class="w-fit py-3 px-6 text-white bg-[#AD1F26]" style={{clipPath: 'polygon(0% 0%, 90% 0, 100% 20%, 100% 100%, 10% 100%, 0 80%)'}}>See Post</button>
-            </div>
-        </div>
-    )
 }
 
 export default EventCard;
