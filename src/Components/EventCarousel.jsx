@@ -185,7 +185,7 @@ function EventCarousel({ events, currentDate }) {
                   <EventCard
                     event={event}
                     currentDate={currentDate}
-                    variant="carousel"
+                    variant="flex"
                   />
                 </div>
               ))}

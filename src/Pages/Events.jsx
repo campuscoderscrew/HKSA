@@ -81,7 +81,7 @@ function Events() {
       ) : (
         <section className="relative overflow-hidden bg-linear-to-b from-[#330008] to-[#AD1F26] px-6 pt-12 pb-0 text-white">
           <div className="mx-auto max-w-6xl text-center">
-            <p className="text-sm font-semibold tracking-[0.2em] text-white/85 uppercase">
+            <p className="text-base font-semibold tracking-[0.2em] text-white/85 uppercase">
               Archive
             </p>
             <h1 className="mt-2 text-3xl font-bold text-[#E0A552] md:text-4xl">
@@ -118,13 +118,13 @@ function Events() {
       {/* Events Flexbox Section */}
       <section className="mx-auto max-w-6xl px-6 pb-12 lg:px-8">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-          <h2 className="text-2xl font-bold text-[#E0A552]">
+          <h2 className="text-3xl font-bold text-[#E0A552]">
             {isCurrentYear ? 'All Events' : `${activeYear} Events`}
           </h2>
           <div className="flex items-center gap-3">
             <button
               onClick={toggleSort}
-              className="flex items-center gap-2 rounded-lg border border-[#E0A552]/30 bg-[#AD1F26] px-4 py-2 text-sm font-semibold text-white shadow transition hover:bg-[#c72830]"
+              className="flex items-center gap-2 rounded-lg border border-[#E0A552]/30 bg-[#AD1F26] px-4 py-2 text-base font-semibold text-white shadow transition hover:bg-[#c72830]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +158,7 @@ function Events() {
                 onChange={(e) =>
                   (window.location.href = `/Events/${e.target.value}`)
                 }
-                className="cursor-pointer appearance-none rounded-lg border border-[#AD1F26]/60 bg-[#6B141D] px-4 py-2 pr-10 text-sm font-semibold text-white transition hover:border-[#E0A552] focus:ring-2 focus:ring-[#AD1F26] focus:outline-none"
+                className="cursor-pointer appearance-none rounded-lg border border-[#AD1F26]/60 bg-[#6B141D] px-4 py-2 pr-10 text-base font-semibold text-white transition hover:border-[#E0A552] focus:ring-2 focus:ring-[#AD1F26] focus:outline-none"
               >
                 {availableYears.map((yearValue) => (
                   <option key={yearValue} value={yearValue}>
@@ -194,7 +194,8 @@ function Events() {
               <EventCard
                 key={event.id}
                 event={event}
-                currentDate={currentDate}
+                currentDate={isCurrentYear ? currentDate : null}
+                variant="grid"
               />
             ))}
           </div>
