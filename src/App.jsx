@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Officers from "./Pages/Officers";
 import Events from "./Pages/Events";
+import Gallery from "./Pages/Gallery";
 import Navbar from "./Components/Navbar";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/About" exact Component={About} />
           <Route path="/Officers" exact Component={Officers} />
           <Route path="/Events" exact Component={Events} />
+          <Route path="/Gallery" exact Component={Gallery} /> 
         </Routes>
       </Router>
     </>

@@ -1,142 +1,12 @@
-export default function Gallery() {
-    // Manually list your image filenames here
-    const imageArray = [
-        "/gallery/DSC_1832_compressed.jpg",
-        "/gallery/DSC_1833_compressed.jpg",
-        "/gallery/DSC_1834_compressed.jpg",
-        "/gallery/DSC_1836_compressed.jpg",
-        "/gallery/DSC_1837_compressed.jpg",
-        "/gallery/DSC_1839_compressed.jpg",
-        "/gallery/DSC_1842_compressed.jpg",
-        "/gallery/DSC_1844_compressed.jpg",
-        "/gallery/DSC_1847_compressed.jpg",
-        "/gallery/DSC_1848_compressed.jpg",
-        "/gallery/DSC_1850_compressed.jpg",
-        "/gallery/DSC_1851_compressed.jpg",
-        "/gallery/DSC_1852_compressed.jpg",
-        "/gallery/DSC_1854_compressed.jpg",
-        "/gallery/DSC_1855_compressed.jpg",
-        "/gallery/DSC_1857_compressed.jpg",
-        "/gallery/DSC_1858_compressed.jpg",
-        "/gallery/DSC_1859_compressed.jpg",
-        "/gallery/DSC_1861_compressed.jpg",
-        "/gallery/DSC_1862_compressed.jpg",
-        "/gallery/DSC_1864_compressed.jpg",
-        "/gallery/DSC_1865_compressed.jpg",
-        "/gallery/DSC_1866_compressed.jpg",
-        "/gallery/DSC_1869_compressed.jpg",
-        "/gallery/DSC_1870_compressed.jpg",
-        "/gallery/DSC_1873_compressed.jpg",
-        "/gallery/DSC_1874_compressed.jpg",
-        "/gallery/DSC_1877_compressed.jpg",
-        "/gallery/DSC_1879_compressed.jpg",
-        "/gallery/DSC_1880_compressed.jpg",
-        "/gallery/DSC_1881_compressed.jpg",
-        "/gallery/DSC_1883_compressed.jpg",
-        "/gallery/DSC_1884_compressed.jpg",
-        "/gallery/DSC_1885_compressed.jpg",
-        "/gallery/DSC_1886_compressed.jpg",
-        "/gallery/DSC_1887_compressed.jpg",
-        "/gallery/DSC_1888_compressed.jpg",
-        "/gallery/DSC_1890_compressed.jpg",
-        "/gallery/DSC_1891_compressed.jpg",
-        "/gallery/DSC_1892_compressed.jpg",
-        "/gallery/DSC_1893_compressed.jpg",
-        "/gallery/DSC_1894_compressed.jpg",
-        "/gallery/DSC_1895_compressed.jpg",
-        "/gallery/DSC_1897_compressed.jpg",
-        "/gallery/DSC_1899_compressed.jpg",
-        "/gallery/DSC_1900_compressed.jpg",
-        "/gallery/DSC_1901_compressed.jpg",
-        "/gallery/DSC_1902_compressed.jpg",
-        "/gallery/DSC_1903_compressed.jpg",
-        "/gallery/DSC_1905_compressed.jpg",
-        "/gallery/DSC_1907_compressed.jpg",
-        "/gallery/DSC_1908_compressed.jpg",
-        "/gallery/DSC_1909_compressed.jpg",
-        "/gallery/DSC_1910_compressed.jpg",
-        "/gallery/DSC_1911_compressed.jpg",
-        "/gallery/DSC_1912_compressed.jpg",
-        "/gallery/DSC_1914_compressed.jpg",
-        "/gallery/DSC_1916_compressed.jpg",
-        "/gallery/DSC_1917_compressed.jpg",
-        "/gallery/DSC_1919_compressed.jpg",
-        "/gallery/DSC_1921_compressed.jpg",
-        "/gallery/DSC_1922_compressed.jpg",
-        "/gallery/DSC_1923_compressed.jpg",
-        "/gallery/DSC_1924_compressed.jpg",
-        "/gallery/DSC_1925_compressed.jpg",
-        "/gallery/DSC_1926_compressed.jpg",
-        "/gallery/DSC_1927_compressed.jpg",
-        "/gallery/DSC_1928_compressed.jpg",
-        "/gallery/DSC_1929_compressed.jpg",
-        "/gallery/DSC_1930_compressed.jpg",
-        "/gallery/DSC_1931_compressed.jpg",
-        "/gallery/DSC_1932_compressed.jpg",
-        "/gallery/DSC_1933_compressed.jpg",
-        "/gallery/DSC_1934_compressed.jpg",
-        "/gallery/DSC_1935_compressed.jpg",
-        "/gallery/DSC_1936_compressed.jpg",
-        "/gallery/DSC_1937_compressed.jpg",
-        "/gallery/DSC_1939_compressed.jpg",
-        "/gallery/DSC_1941_compressed.jpg",
-        "/gallery/DSC_1942_compressed.jpg",
-        "/gallery/DSC_1943_compressed.jpg",
-        "/gallery/DSC_1945_compressed.jpg",
-        "/gallery/DSC_1947_compressed.jpg",
-        "/gallery/DSC_1949_compressed.jpg",
-        "/gallery/DSC_1950_compressed.jpg",
-        "/gallery/DSC_1951_compressed.jpg",
-        "/gallery/DSC_1952_compressed.jpg",
-        "/gallery/DSC_1953_compressed.jpg",
-        "/gallery/DSC_1954_compressed.jpg",
-        "/gallery/DSC_1955_compressed.jpg",
-        "/gallery/DSC_1956_compressed.jpg",
-        "/gallery/DSC_1957_compressed.jpg",
-        "/gallery/DSC_1958_compressed.jpg",
-        "/gallery/DSC_1959_compressed.jpg",
-        "/gallery/DSC_1960_compressed.jpg",
-        "/gallery/DSC_1961_compressed.jpg",
-        "/gallery/DSC_1962_compressed.jpg",
-        "/gallery/DSC_1963_compressed.jpg",
-        "/gallery/DSC_1964_compressed.jpg",
-        "/gallery/DSC_1965_compressed.jpg",
-        "/gallery/DSC_1966_compressed.jpg",
-        "/gallery/DSC_1967_compressed.jpg",
-        "/gallery/DSC_1968_compressed.jpg",
-        "/gallery/DSC_1969_compressed.jpg",
-        "/gallery/DSC_1970_compressed.jpg",
-        "/gallery/DSC_1971_compressed.jpg",
-        "/gallery/DSC_1972_compressed.jpg",
-        "/gallery/DSC_1973_compressed.jpg",
-        "/gallery/DSC_1974_compressed.jpg",
-        "/gallery/DSC_1975_compressed.jpg",
-        "/gallery/DSC_1976_compressed.jpg",
-        "/gallery/DSC_1977_compressed.jpg",
-        "/gallery/DSC_1978_compressed.jpg",
-        "/gallery/DSC_1979_compressed.jpg",
-        "/gallery/DSC_1980_compressed.jpg",
-        "/gallery/DSC_1981_compressed.jpg",
-        "/gallery/DSC_1982_compressed.jpg",
-        "/gallery/DSC_1983_compressed.jpg",
-        "/gallery/DSC_1984_compressed.jpg",
-        "/gallery/DSC_1985_compressed.jpg",
-        "/gallery/DSC_1986_compressed.jpg",
-        "/gallery/DSC_1987_compressed.jpg",
-        "/gallery/DSC_1988_compressed.jpg",
-        "/gallery/DSC_1989_compressed.jpg",
-        "/gallery/DSC_1990_compressed.jpg",
-        "/gallery/DSC_1991_compressed.jpg",
-        "/gallery/DSC_1992_compressed.jpg",
-        "/gallery/DSC_1993_compressed.jpg",
-        "/gallery/DSC_1994_compressed.jpg",
-        "/gallery/DSC_1995_compressed.jpg",
-        "/gallery/DSC_1996_compressed.jpg",
-        "/gallery/DSC_1997_compressed.jpg",
-        "/gallery/DSC_1998_compressed.jpg",
-        "/gallery/DSC_1999_compressed.jpg",
+import { useState } from 'react';
 
-        //halloween photos
+export default function Gallery() {
+  const [activeTab, setActiveTab] = useState('halloween');
+
+  const events = {
+    halloween: {
+      name: "Halloween",
+      images: [
         "/gallery/halloween/DSC_0745_compressed.jpg",
         "/gallery/halloween/DSC_0750_compressed.jpg",
         "/gallery/halloween/DSC_0757_compressed.jpg",
@@ -167,21 +37,143 @@ export default function Gallery() {
         "/gallery/halloween/DSC_7325_compressed.jpg",
         "/gallery/halloween/DSC_7329_compressed.jpg",
         "/gallery/halloween/DSC_7345_compressed.jpg",
-      ];
-  
-    return (
-      <div className="p-6">
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
-          {imageArray.map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt=""
-              loading="lazy"
-              className="mb-4 w-full rounded-xl break-inside-avoid"
-            />
-          ))}
-        </div>
+      ]
+    },
+    event2: {
+      name: "Big Little",
+      images: [
+        '/gallery/BigLittle/DSC_5189_compressed.jpg',
+        '/gallery/BigLittle/DSC_5195_compressed.jpg',
+        '/gallery/BigLittle/DSC_5205_compressed.jpg',
+        '/gallery/BigLittle/DSC_5210_compressed.jpg',
+        '/gallery/BigLittle/DSC_5221_compressed.jpg',
+        '/gallery/BigLittle/DSC_5239_compressed.jpg',
+        '/gallery/BigLittle/DSC_9649_compressed.jpg',
+        '/gallery/BigLittle/DSC_9653_compressed.jpg',
+        '/gallery/BigLittle/DSC_9658_compressed.jpg',
+        '/gallery/BigLittle/DSC_9669_compressed.jpg',
+        '/gallery/BigLittle/DSC_9692_compressed.jpg',
+        '/gallery/BigLittle/DSC_9698_compressed.jpg',
+        '/gallery/BigLittle/DSC_9773_compressed.jpg',
+        '/gallery/BigLittle/DSC_9796_compressed.jpg',
+        '/gallery/BigLittle/DSC_9844_compressed.jpg',
+        '/gallery/BigLittle/DSC_9857_compressed.jpg',
+        '/gallery/BigLittle/DSC_9951_compressed.jpg',
+        '/gallery/BigLittle/DSC_9964_compressed.jpg',
+        '/gallery/BigLittle/DSC_9966_compressed.jpg',
+        '/gallery/BigLittle/DSC_9967_compressed.jpg',
+        '/gallery/BigLittle/DSC_9969_compressed.jpg',
+        '/gallery/BigLittle/DSC_9977_compressed.jpg',
+        '/gallery/BigLittle/DSC_9980_compressed.jpg',
+        '/gallery/BigLittle/DSC_9985_compressed.jpg',
+        '/gallery/BigLittle/DSC_9992_compressed.jpg',
+        '/gallery/BigLittle/DSC_9995_compressed.jpg',
+        '/gallery/BigLittle/DSC_9998_compressed.jpg'
+      ]
+    },
+    event3: {
+      name: "Winterfest",
+      images: [
+        '/gallery/Winterfest/DSC_1837_compressed.jpg',
+        '/gallery/Winterfest/DSC_1844_compressed.jpg',
+        '/gallery/Winterfest/DSC_1852_compressed.jpg',
+        '/gallery/Winterfest/DSC_1864_compressed.jpg',
+        '/gallery/Winterfest/DSC_1868_compressed.jpg',
+        '/gallery/Winterfest/DSC_1892_compressed.jpg',
+        '/gallery/Winterfest/DSC_1899_compressed.jpg',
+        '/gallery/Winterfest/DSC_1902_compressed.jpg',
+        '/gallery/Winterfest/DSC_1907_compressed.jpg',
+        '/gallery/Winterfest/DSC_1910_compressed.jpg',
+        '/gallery/Winterfest/DSC_1916_compressed.jpg',
+        '/gallery/Winterfest/DSC_1928_compressed.jpg',
+        '/gallery/Winterfest/DSC_1943_compressed.jpg',
+        '/gallery/Winterfest/DSC_1952_compressed.jpg',
+        '/gallery/Winterfest/DSC_1985_compressed.jpg',
+        '/gallery/Winterfest/DSC_2032_compressed.jpg',
+        '/gallery/Winterfest/DSC_2049_compressed.jpg',
+        '/gallery/Winterfest/DSC_2099_compressed.jpg',
+        '/gallery/Winterfest/DSC_2104_compressed.jpg',
+        '/gallery/Winterfest/DSC_2117_compressed.jpg',
+        '/gallery/Winterfest/DSC_2159_compressed.jpg',
+        '/gallery/Winterfest/DSC_9389_compressed.jpg',
+        '/gallery/Winterfest/DSC_9390_compressed.jpg',
+        '/gallery/Winterfest/DSC_9399_compressed.jpg',
+        '/gallery/Winterfest/DSC_9401_compressed.jpg',
+        '/gallery/Winterfest/DSC_9460_compressed.jpg',
+        '/gallery/Winterfest/DSC_9468_compressed.jpg',
+        '/gallery/Winterfest/DSC_9476_compressed.jpg',
+        '/gallery/Winterfest/DSC_9486_compressed.jpg',
+        '/gallery/Winterfest/DSC_9523_compressed.jpg'
+      ]
+    },
+    event4: {
+      name: "Egg Waffle GBM",
+      images: [
+        '/gallery/egg-waffle-gbm/DSC_3267_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3274_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3281_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3284_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3288_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3289_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3292_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3300_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3304_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3305_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3306_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3311_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3314_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3321_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3329_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3335_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3339_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3344_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3353_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3357_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3362_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3364_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3365_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3366_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3372_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3373_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3376_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3399_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3409_compressed.jpg',
+        '/gallery/egg-waffle-gbm/DSC_3410_compressed.jpg'
+      ]
+    }
+  };
+
+  return (
+    <div className="p-6">
+      {/* Tabs */}
+      <div className="flex gap-2 mb-6 border-b border-gray-200">
+        {Object.entries(events).map(([key, event]) => (
+          <button
+            key={key}
+            onClick={() => setActiveTab(key)}
+            className={`px-4 py-2 font-medium transition-colors ${
+              activeTab === key
+                ? 'border-b-2 border-blue-600 text-blue-600'
+                : 'text-gray-600 hover:text-gray-900'
+            }`}
+          >
+            {event.name}
+          </button>
+        ))}
       </div>
-    );
-  }
+
+      {/* Gallery */}
+      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
+        {events[activeTab].images.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt=""
+            loading="lazy"
+            className="mb-4 w-full rounded-xl break-inside-avoid"
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
